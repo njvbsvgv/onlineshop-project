@@ -1,0 +1,47 @@
+.page-header-container {
+  width: 100%;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+}
+
+.page-header-container > .items-control {
+  width: 85%;
+  padding-block: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.page-header-container > .items-control > .header-top-item,
+.page-header-container > .items-control > .header-bottom-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.page-header-container > .items-control > .header-bottom-item {
+    margin-top: 20px;
+}
+
+.page-header-container > .items-control > .header-bottom-item > .left-item, .right-item {
+    width: 50%;
+    display: flex;
+}
+
+.page-header-container > .items-control > .header-bottom-item > .left-item {
+    justify-content: flex-end;
+}
+
+.page-header-container > .items-control > .header-bottom-item > .left-item > .basket-icon {
+    height: 30px;
+    cursor: pointer;
+}
+
+.page-header-container > .items-control > .header-top-item > .btn-control {
+  width: 150px;
+}
+
+.page-header-container > .items-control > .header-top-item > .input-control {
+  width: 40%;
+}

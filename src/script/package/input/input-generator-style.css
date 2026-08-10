@@ -1,0 +1,59 @@
+.custom-input-section-container {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  gap: 27px;
+}
+
+.custom-input-section-container > .custominput-item-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 13px;
+}
+
+.custom-input-section-container
+  > .custominput-item-container
+  > .custom-input-control,
+.custom-input-section-container > .custom-input-control {
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.custom-input-section-container > .custominput-item-container > p,
+.custom-input-section-container > p {
+  margin: 0;
+}
+
+.custom-input-section-container
+  > .custominput-item-container
+  > .custom-input-control
+  > .custom-input,
+.custom-input-section-container > .custom-input-control > .custom-input {
+  width: 100%;
+  outline: none;
+  border: 1px solid #dddddd;
+  padding-inline: 8px;
+  padding-block: 13px;
+  border-radius: 15px;
+}
+
+.custom-input-section-container
+  > .custominput-item-container
+  > .custom-input-control
+  > .custom-input,
+.custom-input-section-container > .custom-input-control > .custom-input::placeholder {
+  font-family: samim;
+}
+
+.custom-input-section-container
+  > .custominput-item-container
+  > .custom-input-control
+  > .custom-icon-elem,
+.custom-input-section-container > .custom-input-control > .custom-icon-elem {
+  position: absolute;
+  left: 15px;
+}

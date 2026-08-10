@@ -1,0 +1,20 @@
+.navigation-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+}
+
+.navigation-container > .navigation-text {
+    cursor: pointer;
+}
+
+.navigation-container > .navigation-text.navigation-text-noactive {
+    color: #646464;
+}
+
+.navigation-container > .navigation-text.navigation-text-active {
+    color: #08182A;
+    font-weight: 600;
+}

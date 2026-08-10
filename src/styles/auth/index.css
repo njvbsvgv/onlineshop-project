@@ -1,0 +1,29 @@
+/* .auth-pages-controller {
+  width: 100%;
+  height: 100vh;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.74), rgba(0, 0, 0, 0.66)),
+    url("../../assets/photos/auth-bg-image.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.auth-pages-controller > .sign-in {
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.auth-pages-controller > .sign-up {
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+} */
+
+
+#root {
+  width: 100%;
+  height: 100vh;
+}

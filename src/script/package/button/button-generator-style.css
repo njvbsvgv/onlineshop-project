@@ -1,0 +1,31 @@
+.custom-btn {
+    outline: none;
+    border: none;
+    padding-inline: 8px;
+    padding-block: 13px;
+    background: #08182A;
+    color: white;
+    font-family: shabnam;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 15px;
+}
+
+.custom-btn-border {
+    outline: none;
+    border: 1px solid #08182A;
+    padding-inline: 8px;
+    padding-block: 13px;
+    background: transparent;
+    color: #08182A;
+    font-family: shabnam;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 15px;
+    transition: 0.6s;
+}
+
+.custom-btn-border:hover {
+    background: #08182A;
+    color: #fff;
+}

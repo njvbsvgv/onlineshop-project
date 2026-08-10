@@ -1,0 +1,8 @@
+.product-page-container {
+    width: 100%;
+}
+
+.product-page-container > h1 {
+    text-align: center;
+    cursor: pointer;
+}

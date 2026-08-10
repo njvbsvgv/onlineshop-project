@@ -1,0 +1,16 @@
+.logo-control {
+    outline: none;
+    border: none;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.logo-control > .logo-text {
+    font-family: samim;
+    font-size: 19px;
+    font-weight: 600;
+    color: #FE8B1E;
+}

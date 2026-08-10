@@ -1,0 +1,27 @@
+body {
+    margin: 0;
+    font-family: samim;
+    background: #F8F8F8;
+}
+
+@font-face {
+    font-family: shabnam;
+    src: url(../assets/fonts/Shabnam-FD.ttf);
+}
+
+@font-face {
+    font-family: samim;
+    src: url(../assets/fonts/Samim-FD.ttf);
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+.show-flex {
+    display: flex;
+}
