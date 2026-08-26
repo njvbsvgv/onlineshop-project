@@ -130,10 +130,18 @@ const enData = {
       {
         type: "text",
         name: "text",
-        placeholder: "جستجو کنید...",
-        icon: "./src/assets/icons/user.svg",
+        placeholder: "Search...",
         isIconClick: true,
       },
     ],
+    filterBox: {
+      category: {
+        label: "Category",
+      },
+      brand: {
+        label: "Brands",
+      },
+    },
+    listResult: "result"
   },
 };

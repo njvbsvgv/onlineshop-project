@@ -333,7 +333,7 @@ const categoryData = [
   { id: 3, text: "شلوار جین" },
   { id: 4, text: "هودی" },
   { id: 5, text: "تیشرت" },
-  { id: 6, text: "تیشرت" },
+  { id: 6, text: "پیراهن" },
   { id: 7, text: "تیشرت" },
   { id: 8, text: "تیشرت" },
   { id: 9, text: "تیشرت" },

@@ -10,11 +10,17 @@ const ProductPage = () => {
   const sortItem = document.createElement("div");
   sortItem.setAttribute("class", "sort-item");
 
+  const listResultItem = document.createElement("span")
+  listResultItem.setAttribute("class", "list-result")
+
   const bottomItemController = document.createElement("div");
   bottomItemController.setAttribute("class", "bottom-item-controller");
 
   const cardController = document.createElement("div");
   cardController.setAttribute("class", "card-controller");
+
+  const paginationContainer = document.createElement("div");
+  paginationContainer.setAttribute("class", "pagination-controller");
 
   const filtersBoxController = document.createElement("div");
   filtersBoxController.setAttribute("class", "filters-box-controller");
@@ -25,27 +31,56 @@ const ProductPage = () => {
       "checkbox",
       "category",
       "text",
-      "دسته بندی",
+      t("filterBox.category.label"),
     ),
-    FilterBoxGenerator(brandData, "checkbox", "brand", "text", "برندها"),
+    FilterBoxGenerator(brandData, "checkbox", "brand", "text", t("filterBox.brand.label")),
   );
 
-  products.forEach((item) => {
-    cardController.appendChild(
-      ProductCard({
-        image: item.image,
-        title: item.title,
-        description: item.description,
-        price: item.price,
-      }),
-    );
-  });
-
   sortItem.appendChild(inputGenerator(t("inputData"), 50));
-  topItemController.append(sortItem);
+  topItemController.append(sortItem, listResultItem);
   bottomItemController.append(filtersBoxController, cardController);
+  container.append(
+    topItemController,
+    bottomItemController,
+    paginationContainer,
+  );
 
-  container.append(topItemController, bottomItemController);
+  const page = MainPageLayout(container);
+  const searchInputEl = sortItem.querySelector("input");
 
-  return MainPageLayout(container);
+  setTimeout(() => {
+    const filterPagination = ProductFilterPagination({
+      productsData: products,
+      cardController,
+      renderItem: (item, list) => {
+        console.log("list ==>", list)
+        listResultItem.textContent = `${list ? list : 0} ${t("listResult")}`
+        if (list > 0) {
+            cardController.appendChild(
+              Motion(
+                ProductCard({
+                  image: item.image,
+                  title: item.title,
+                  description: item.description,
+                  price: item.price,
+                  cardClick: () => console.log("product clicked:", item.id),
+                  favoriteClick: () => console.log("item ==>", item)
+                }),
+                0.2,
+                [
+                  { key: "width", style: "auto" },
+                  { key: "height", style: "auto" },
+                ],
+              ),
+            );
+        }
+      },
+      searchInput: searchInputEl,
+      paginationContainer,
+      itemsPerPage: 8,
+    });
+    filterPagination.init();
+  }, 0);
+
+  return page;
 };

@@ -7,12 +7,19 @@
 .product-page-container > .top-item-controller {
     width: 100%;
     display: flex;
+    justify-content: space-between;
     /* height: 20px; */
     /* border: 1px solid red; */
 }
 
 .product-page-container > .top-item-controller > .sort-item {
     width: 50%;
+}
+
+.product-page-container > .top-item-controller > span {
+    color: orange;
+    font-size: 17px;
+    font-weight: 600;
 }
 
 .product-page-container > .bottom-item-controller {

@@ -134,5 +134,14 @@ const faData = {
         isIconClick: true,
       },
     ],
+    filterBox: {
+      category: {
+        label: "دسته بندی"
+      },
+      brand: {
+        label: "برند ها"
+      }
+    },
+    listResult: "نتیجه"
   },
 };
