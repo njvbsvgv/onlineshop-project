@@ -39,7 +39,10 @@
 }
 
 .page-header-container > .items-control > .header-top-item > .btn-control {
-  width: 150px;
+  /* width: 150px; */
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .page-header-container > .items-control > .header-top-item > .input-control {

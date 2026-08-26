@@ -16,41 +16,54 @@ const SignInPage = () => {
   //   },
   // );
 
+  const http = new httpInterceptore();
+  const usersData = http.get("/users/1");
+
+  console.log("usersData id ==>", usersData)
+  const t = languageTranslation("auth.login");
+  const authCardClass = new AuthCardClass(
+    t("title"),
+    t("subTitle"),
+    formGenerator({
+      inputChildren: inputGenerator(t("signinInputData"), 100, (event) => {}
+        // inputChangeHandler(event),
+      ),
+      buttonChildren: buttonGenerator(t("submitBtn"), "submit", "btn", true),
+      submitHandler: (event) => {
+        console.log("event ==>", event)
+        const formData = extractFormData(event, 2)
+        console.log("formData ==>", formData)
+        const usersData = http.get(`/users/${formData.email}`);
+        console.log("usersData ==>", usersData)
+        if (usersData.data) {
+          if (formData.password == usersData.data.password) {
+            toast().success(t("toastMessage.success"))
+            useUpdateRout("/landing")
+          }else {
+            toast().error(t("toastMessage.passwordErrorMessage"))
+          }
+        }else {
+          toast().worning(t("toastMessage.error"))
+          useUpdateRout("/auth/sign-up")
+        }
+      }
+    }),
+    "ورود به حساب کاربری",
+    t("bottomText.right"),
+    t("bottomText.left"),
+    t("bottomText.gotoHomeBtn"),
+    "",
+    {
+      gotoSignUp: () => gotoSignUpPage(),
+      gotoHomeBtn: () => useUpdateRout("/landing"),
+    },
+  );
+
   return AuthPageContaienr(
-    Motion(
-      AuthCardGenerator({
-        miniTitle: "ورود به حساب کاربری",
-        subTitle: "برای ورود به حساب کاربری مشخصات خود را وارد کنید",
-        inputsChildren: formGenerator({
-          inputChildren: inputGenerator(signUpInputData, 100, (event) =>
-            inputChangeHandler(event),
-          ),
-          buttonChildren: buttonGenerator(
-            "ورود به حساب کاربری",
-            "submit",
-            "btn",
-            true,
-          ),
-        }),
-        btnText: "ورود به حساب کاربری",
-        leftText: "ایجاد حساب کاربری",
-        rightText: "تازه وارد هستید ؟",
-        holderId: "",
-        actions: {
-          gotoSignUp: () => {
-            gotoSignUpPage();
-          },
-          gotoHomeBtn: () => {
-            useUpdateRout("/landing");
-          },
-        },
-      }),
-      0.25,
-      [
-        {key: "display", style: "flex"},
-        {key: "justifyContent", style: "center"},
-        {key: "alignItems", style: "center"},
-      ]
-    ),
+    Motion(authCardClass.generator(), 0.25, [
+      { key: "display", style: "flex" },
+      { key: "justifyContent", style: "center" },
+      { key: "alignItems", style: "center" },
+    ]),
   );
 };

@@ -45,7 +45,9 @@
   > .custominput-item-container
   > .custom-input-control
   > .custom-input,
-.custom-input-section-container > .custom-input-control > .custom-input::placeholder {
+.custom-input-section-container
+  > .custom-input-control
+  > .custom-input::placeholder {
   font-family: samim;
 }
 
@@ -55,5 +57,25 @@
   > .custom-icon-elem,
 .custom-input-section-container > .custom-input-control > .custom-icon-elem {
   position: absolute;
-  left: 15px;
+  inset-inline-start: 90%;
+}
+
+/* .custom-input-section-container
+  > .custominput-item-container
+  > .custom-input-control
+  > .custom-icon-elem,
+.custom-input-section-container > .custom-input-control > .custom-icon-elem {
+  position: absolute;
+  inset-inline-start: 15px;
+} */
+
+
+.custom-input.input-error {
+  border: 1.5px solid #e53e3e !important;
+}
+
+.input-error-message {
+  color: #e53e3e;
+  font-size: 12px;
+  margin-top: 2px;
 }

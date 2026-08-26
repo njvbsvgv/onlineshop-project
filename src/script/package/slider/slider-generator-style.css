@@ -1,0 +1,76 @@
+.slider-container {
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 32px;
+  width: 100%;
+}
+
+.slider-wrapper {
+  display: flex;
+  transition: transform 0.4s ease;
+  align-items: stretch;
+  direction: ltr;
+}
+
+.slider-slide {
+  flex-shrink: 0;
+  box-sizing: border-box;
+  /* عرض هر slide توسط JS با style.minWidth ست میشه */
+}
+
+/* Navigation Buttons */
+.slider-btn {
+  position: absolute;
+  top: 45%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.slider-btn:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.slider-btn-prev {
+  left: 4px;
+}
+
+.slider-btn-next {
+  right: 4px;
+}
+
+/* Pagination */
+.slider-pagination {
+  position: absolute;
+  bottom: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 6px;
+  z-index: 10;
+}
+
+.slider-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.slider-dot.active {
+  background: #000;
+  transform: scale(1.3);
+}

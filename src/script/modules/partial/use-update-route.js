@@ -4,11 +4,6 @@ const useUpdateRout = (routName) => {
   // console.log("routData ==>", routData)
   // RoutController()
   // CreateWebPages(routData)
-  CreateWebPages([
-    { path: "/auth/sign-in", element: SignInPage() },
-    { path: "/auth/sign-up", element: SignUpPage() },
-    { path: "/landing", element: LadingPage() },
-    { path: "/products", element: ProductPage() },
-  ]);
+  RebuildWebPages()
   // window.location.reload()
 };

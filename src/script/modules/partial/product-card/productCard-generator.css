@@ -1,0 +1,90 @@
+.product-card {
+    width: 250px;
+    height: 350px;
+    overflow: hidden;
+    border: 0.5px solid rgb(228, 228, 228);
+    border-radius: 20px;
+    flex-shrink: 0;
+    padding: 10px;
+}
+
+.product-card > .image-control {
+    /* width: 200px;
+    height: auto; */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 7px;
+    position: relative;
+}
+
+.product-card > .image-control > img {
+    width: auto;
+    height: 200px;
+    border-radius: 20px;
+}
+
+.product-card > .image-control > .addto-favorite-btn {
+    width: 30px;
+    height: 30px;
+    border-radius: 20px;
+    border: 1px solid rgb(133, 133, 133);
+    outline: none;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: absolute;
+    top: 5px;
+    /* right: 0; */
+    inset-inline-start: 85%;
+}
+
+.product-card > .image-control > .addto-favorite-btn > img {
+    width: 95%;
+    height: 95%;
+}
+
+.product-card > .title {
+    font-size: 15px;
+    font-weight: bold;
+    margin: 8px 0 0 0;
+}
+
+.product-card > .description {
+    font-size: 13px;
+    color: rgb(132, 132, 132);
+    margin: 15px 0 0 0;
+}
+
+.product-card > .bottom-item-control {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.product-card > .bottom-item-control > .show-detail-btn {
+    outline: none;
+    border: none;
+    background: #000;
+    color: #fff;
+    border-radius: 10px;
+    padding-inline: 12px;
+    padding-block: 5px;
+    cursor: pointer;
+    font-size: 12px;
+    font-family: samim;
+    box-shadow: 0 0 10px rgb(0 0 0 / 68%);
+    margin-bottom: -200px;
+    transition: 0.4s;
+}
+
+.product-card:hover > .bottom-item-control > .show-detail-btn {
+    margin-bottom: 0;
+}
+
+.product-card > .bottom-item-control > .price {
+    font-size: 17px;
+}

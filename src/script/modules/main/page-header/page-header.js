@@ -1,4 +1,5 @@
 const PageHeader = () => {
+  const t = languageTranslation("header");
   const headerContainer = document.createElement("div");
   headerContainer.className = "page-header-container";
 
@@ -11,14 +12,11 @@ const PageHeader = () => {
   const bottomItem = document.createElement("div");
   bottomItem.className = "header-bottom-item";
 
+
   const bottomItemRight = document.createElement("div");
   bottomItemRight.className = "right-item"
   bottomItemRight.appendChild(
-    NavigationPage([
-      { text: "صفحه اصلی", link: "/landing" },
-      { text: "همه محصولات", link: "/products" },
-      { text: "اخبار", link: "/news" },
-    ]),
+    NavigationPage(t("navigationData")),
   );
 
   const basketIcon = document.createElement("img")
@@ -29,10 +27,21 @@ const PageHeader = () => {
   bottomItemLeft.className = "left-item"
   bottomItemLeft.appendChild(basketIcon)
 
+  const language = getDataFromLocalStorage("language");
+    const changeLanguageHandler = (locale) => {
+      if (locale == "fa") {
+        updateLanguage("fa");
+      } else {
+        updateLanguage("en");
+      }
+      RebuildWebPages();
+    };
+
   const btnControl = document.createElement("div");
   btnControl.className = "btn-control";
-  btnControl.appendChild(
-    buttonGenerator("ورود / ثبت نام", "button", "btn", false, () => {
+  btnControl.append(
+    languageSwitcherGenerator(language, changeLanguageHandler),
+    buttonGenerator(t("loginBtn"), "button", "btn", false, () => {
       useUpdateRout("/auth/sign-in");
     }),
   );
@@ -45,7 +54,7 @@ const PageHeader = () => {
         {
           label: "",
           type: "text",
-          placeholder: "نام لباس ، برند یا ...",
+          placeholder: t("inputPlaceholder"),
           icon: "./src/assets/icons/search.svg",
           isIconClick: false,
         },

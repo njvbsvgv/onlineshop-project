@@ -1,0 +1,81 @@
+.auth-layout-card {
+    width: 400px;
+    padding: 20px;
+    border-radius: 20px;
+    background: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.286);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 48px;
+}
+
+
+/* start styling the logo item */
+.auth-layout-card > .logo-control {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3px;
+}
+
+.auth-layout-card > .logo-control > .logo-text {
+    color: #FE8B1E;
+    font-size: 18px;
+}
+
+.auth-layout-card > .logo-control > .logo-image-control {
+    width: 52%;
+}
+
+.auth-layout-card > .logo-control > .logo-image-control > .logo-image {
+    width: 26px;
+}
+/* finish styling the logo item */
+
+
+/* start styling the title item */
+.auth-layout-card > .title-container > .main-title {
+    font-size: 20px;
+    text-align: center;
+    margin: 0;
+    font-weight: 500;
+}
+.auth-layout-card > .title-container > .sub-title {
+    font-size: 12px;
+    text-align: center;
+    color: #4C4C4C;
+    margin: 11px 0 0 0;
+    font-weight: 400;
+}
+/* finish styling the title item */
+
+/* start styling the inputs-control section */
+.auth-layout-card > .inputs-control {
+    width: 100%;
+}
+/* finish styling the inputs-control section */
+
+/* start styling the bottom item */
+.auth-layout-card > .bottom-item {
+    font-size: 13px;
+    display: flex;
+    gap: 5px;
+}
+
+.auth-layout-card > .bottom-item > .left-text {
+    color: #08182A;
+    cursor: pointer;
+}
+
+.auth-layout-card > .bottom-item > .right-text {
+    color: #4C4C4C;
+}
+
+.goto-home-btn {
+    cursor: pointer;
+    font-size: 14px;
+    margin: 0;
+}
+/* finish styling the bottom item */

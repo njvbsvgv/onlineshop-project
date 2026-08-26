@@ -32,3 +32,11 @@
     gap: 10px;
     cursor: pointer;
 }
+
+.product-box-container > .product-box-card-item-control {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 18px;
+    overflow: hidden;
+}

@@ -10,7 +10,11 @@
 
 const buttonGenerator = (text, type, name, styleType, onClick) => {
   const customBtn = document.createElement("button");
-  customBtn.addEventListener("click", () => {onClick()})
+  if (onClick) {
+    customBtn.addEventListener("click", () => {
+      onClick();
+    });
+  }
   switch (styleType) {
     case true:
       customBtn.classList.add("custom-btn");

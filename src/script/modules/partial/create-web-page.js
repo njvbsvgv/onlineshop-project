@@ -15,23 +15,35 @@
 //   webPages.authPages.signUpPage.appendChild(SignUpPage());
 // };
 
+
+
+
+let currentRoutData = [];
+
 const CreateWebPages = (routData) => {
-  // setDataToLocalStorage("routData", routData, true)
-  // console.log("routData ==>", routData)
-  const pathName = getDataFromLocalStorage("routName", false)
-  // const elementHolder = document.createElement("div")
-  // elementHolder.style.width = "100%"
-  // elementHolder.style.height = "100%"
-  const rootElement = document.getElementById("root")
-  rootElement.innerHTML = ""
-  routData.forEach((item, index) => {
-    if (item.path.includes(pathName)) {
-      rootElement.appendChild(item.element)
-      // alert("")
+  currentRoutData = routData;
+  RebuildWebPages();
+};
+
+const RebuildWebPages = () => {
+  const pathName = localStorage.getItem("routName");
+  const language = localStorage.getItem("language")
+  const rootElement = document.getElementById("root");
+
+  if (language) {
+    if (language == "fa") {
+      document.body.dir = "rtl"
+    }else {
+      document.body.dir = "ltr"
     }
-  })
+  }
 
-  // webPages.authPages.signInPage.appendChild(SignInPage());
+  rootElement.innerHTML = "";
 
-  // webPages.authPages.signUpPage.appendChild(SignUpPage());
+  currentRoutData.forEach((item) => {
+    if (item.path.includes(pathName)) {
+      const element = item.element();
+      rootElement.append(element);
+    }
+  });
 };

@@ -11,6 +11,6 @@ const MainPageLayout = (children) => {
     holder.style.width = "85%"
     holder.appendChild(children)
 
-    holderContainer.append(PageHeader(), holder)
+    holderContainer.append(PageHeader(), holder, PageFooter())
     return holderContainer
 }

@@ -17,14 +17,16 @@ const getDataFromLocalStorage = (key, isParser) => {
     case false:
       data = localStorage.getItem(key);
       break;
+    default:
+      data = localStorage.getItem(key);
   }
   return data;
 };
 
 const deleteDataFromLocalStorage = (key) => {
-    localStorage.removeItem(key)
-}
+  localStorage.removeItem(key);
+};
 
 const clearLocalStorage = () => {
-    localStorage.clear()
-}
+  localStorage.clear();
+};

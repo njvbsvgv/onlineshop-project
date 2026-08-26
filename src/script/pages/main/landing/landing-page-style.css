@@ -1,9 +1,32 @@
 .herou-section {
-    width: 100%;
-    margin-top: 40px;
+  width: 100%;
+  margin-top: 40px;
 }
 
-.landing-page-container > .product-one-section-control {
-    width: 100%;
-    margin-top: 50px;
+.landing-page-container > .product-section-control {
+  width: 100%;
+  margin-top: 50px;
+}
+
+.landing-page-container > .product-section-control.three-section {
+    margin-top: 90px;
+}
+
+.landing-page-container > .image-box {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 120px;
+}
+
+.landing-page-container > .image-box > .image-box-center {
+    width: 50%;
+}
+
+.landing-page-container > .image-box > .image-box-left,
+.landing-page-container > .image-box > .image-box-right {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 25%;
 }
