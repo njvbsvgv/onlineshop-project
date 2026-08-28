@@ -8,25 +8,6 @@ const descriptionAndCommentBoxGenerator = (description, comment) => {
   const bottomItem = document.createElement("div");
   bottomItem.setAttribute("class", "bottom-item");
 
-  //   const textGeneration = new descriptionAndCommentBoxTitleGenerator(
-  //     (selectedIndex) => {
-  //       container.innerHTML = "";
-
-  //       container.appendChild(
-  //         textGeneration.generator([
-  //           {
-  //             text: "توضیحات محصول",
-  //             className: selectedIndex === 0 ? "active" : "not-active",
-  //           },
-  //           {
-  //             text: "نظرات کاربران",
-  //             className: selectedIndex === 1 ? "active" : "not-active",
-  //           },
-  //         ]),
-  //       );
-  //     },
-  //   );
-
   const textGeneration = new descriptionAndCommentBoxTitleGenerator(
     (selectedIndex) => {
       selectedIndexv === 0
@@ -42,6 +23,7 @@ const descriptionAndCommentBoxGenerator = (description, comment) => {
 
   topItem.appendChild(text);
 
-  container.append(topItem);
+  bottomItem.appendChild(commentWrapper())
+  container.append(Motion(topItem, 2.8, [{key: "width", style: "100%"}, {key: "height", style: "auto"}]), Motion(bottomItem, 3, [{key: "width", style: "100%"}, {key: "height", style: "auto"}]));
   return container;
 };

@@ -5,6 +5,7 @@ class httpInterceptore {
   constructor() {}
 
   get(endUrl) {
+    this.dataBase = JSON.parse(localStorage.getItem("dataBase"));
     const splitedEndUrl = endUrl.split("/");
     let targetId = splitedEndUrl[2];
     // splitedEndUrl.forEach((el) => {
@@ -30,6 +31,7 @@ class httpInterceptore {
   }
 
   create(endUrl, data) {
+    this.dataBase = JSON.parse(localStorage.getItem("dataBase"));
     const splitedEndUrl = endUrl.split("/")[1];
     const findModel = this.dataBase[splitedEndUrl];
     const newData = [...findModel, {id: findModel.length + 1, ...data}];
@@ -42,6 +44,7 @@ class httpInterceptore {
   }
 
   update(endUrl, data) {
+    this.dataBase = JSON.parse(localStorage.getItem("dataBase"));
     const splitedEndUrl = endUrl.split("/");
     const url = splitedEndUrl[1];
     let targetId = false;
@@ -65,6 +68,7 @@ class httpInterceptore {
   }
 
   delete(endUrl) {
+    this.dataBase = JSON.parse(localStorage.getItem("dataBase"));
     const splitedEndUrl = endUrl.split("/")[1];
     const findModel = this.dataBase[splitedEndUrl]
     let targetId = false;

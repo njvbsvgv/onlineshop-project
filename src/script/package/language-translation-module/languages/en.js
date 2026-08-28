@@ -150,7 +150,79 @@ const enData = {
       sizeLabel: "Size",
       colorLabel: "Colors",
       addToBasket: "Add To Basket",
-      similarProducts: "Similar Products"
-    }
+      similarProducts: "Similar Products",
+      commentData: {
+        inputData: [
+          {
+            label: "Title",
+            type: "text",
+            name: "title",
+            placeholder: "Enter the title",
+            isIconClick: false,
+            validation: {
+              required: true,
+              errorMessage: "This field is required",
+            },
+          },
+          {
+            label: "Comment",
+            type: "text",
+            name: "comment",
+            placeholder: "Enter your comment",
+            isIconClick: false,
+            validation: {
+              required: true,
+              errorMessage: "This field is required",
+            },
+          },
+        ],
+        btnData: {
+          submit: "Submit",
+          reset: "Reset",
+        },
+      },
+    },
+  },
+  commentFormData: {
+    inputData: [
+      {
+        label: "Title",
+        type: "text",
+        name: "title",
+        placeholder: "Enter the title",
+        isIconClick: false,
+        validation: {
+          required: true,
+          errorMessage: "This field is required",
+        },
+      },
+      {
+        label: "Comment",
+        type: "text",
+        name: "comment",
+        placeholder: "Enter your comment",
+        isIconClick: false,
+        validation: {
+          required: true,
+          errorMessage: "This field is required",
+        },
+      },
+    ],
+    btnData: {
+      submit: "Submit",
+      reset: "Reset",
+    },
+    cardData: {
+      title: "Title",
+      caption: "Caption"
+    },
+    noResult: "No comment reult"
+  },
+  toastMessage: {
+    createOrder: {
+      success: "Product added to your cart successfully ✅",
+      warning: "This product is already in your cart",
+    },
+    error: "Please log in to your account first 🚫",
   },
 };

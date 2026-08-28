@@ -322,6 +322,7 @@ document.addEventListener("DOMContentLoaded", () => {
   //         status: ["جدیدترین"],
   //       },
   //     ],
+  //     commentList: [],
   //     onlineshopBasket: [],
   //   },
   //   true,

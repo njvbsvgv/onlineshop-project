@@ -1,0 +1,139 @@
+.comment-wrapper {
+  width: 95%;
+}
+
+.comment-wrapper > form {
+  width: 50%;
+  position: relative;
+  inset-inline-start: 2%;
+}
+
+.create-form-btn-controller {
+  width: 100%;
+  display: flex;
+  gap: 30px;
+}
+
+/* start styling the card */
+.comment-wrapper > .list-wrapper {
+  width: 100%;
+}
+
+.comment-wrapper > .list-wrapper > div > .card-wrapper {
+  width: 100%;
+  border: 1px solid rgb(215, 215, 215);
+  border-radius: 20px;
+  padding-block: 20px;
+  display: flex;
+  justify-content: center;
+  margin-top: 70px;
+  /* border-radius: 20px; */
+}
+
+.comment-wrapper > .list-wrapper > p {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 80px;
+}
+
+.comment-wrapper > .list-wrapper > div > .card-wrapper > .item-controller {
+  width: 95%;
+}
+
+.comment-wrapper
+  > .list-wrapper
+  > div
+  > .card-wrapper
+  > .item-controller
+  > .comment-card-top-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.comment-wrapper
+  > .list-wrapper
+  > div
+  > .card-wrapper
+  > .item-controller
+  > .comment-card-top-item
+  > .user-image-btn {
+  width: 40px;
+  height: 40px;
+  outline: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgb(213, 213, 213);
+}
+
+.comment-wrapper
+  > .list-wrapper
+  > div
+  > .card-wrapper
+  > .item-controller
+  > .comment-card-top-item
+  > .user-image-btn
+  > img {
+  width: 80%;
+  height: 80%;
+}
+
+.comment-wrapper
+  > .list-wrapper
+  > div
+  > .card-wrapper
+  > .item-controller
+  > .comment-card-bottom-item {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.comment-wrapper
+  > .list-wrapper
+  > div
+  > .card-wrapper
+  > .item-controller
+  > .comment-card-bottom-item
+  > button {
+  outline: none;
+  background: transparent;
+  border: 1px solid rgb(191, 191, 191);
+  padding-inline: 15px;
+  padding-block: 5px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.comment-wrapper
+  > .list-wrapper
+  > div
+  > .card-wrapper
+  > .item-controller
+  > .comment-card-bottom-item
+  > button
+  > img {
+  width: 20px;
+  height: 20px;
+}
+
+.comment-wrapper
+  > .list-wrapper
+  > div
+  > .card-wrapper
+  > .item-controller
+  > .comment-card-bottom-item
+  > button
+  > span {
+  font-weight: bold;
+  font-size: 17px;
+}

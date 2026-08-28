@@ -205,38 +205,44 @@ const ProductDetailPage = () => {
   // top items
 
   const similerProduct = getSimilerProduct(product.data.category);
-  console.log("similerProduct ==>", similerProduct);
   container.append(
     productInformationController,
     descriptionAndCommentBoxGenerator(),
-    ProductBox({
-      title: t("similarProducts"),
-      children: Motion(
-        sliderGenerator({
-          children: similerProduct.map((item) =>
-            ProductCard({
-              image: item.image,
-              title: item.title,
-              description: item.description,
-              price: item.price,
-              cardClick: () => {
-                useUpdateRout("/product-detail", item.id);
-                window.scrollTo({ top: 0, behavior: "smooth" });
-              },
-            }),
-          ),
-          slidesPerView: 5, // تعداد کارت در هر صفحه
-          spaceBetween: 8, // فاصله بین کارت‌ها به px
-          autoplay: true,
-          autoplayDelay: 3000,
-          loop: true,
-          showPagination: true,
-          showNavigation: true,
-          width: "100%",
-        }),
-        0.5,
-      ),
-    }),
+    Motion(
+      ProductBox({
+        title: t("similarProducts"),
+        children: Motion(
+          sliderGenerator({
+            children: similerProduct.map((item) =>
+              ProductCard({
+                image: item.image,
+                title: item.title,
+                description: item.description,
+                price: item.price,
+                cardClick: () => {
+                  useUpdateRout("/product-detail", item.id);
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                },
+              }),
+            ),
+            slidesPerView: 5, // تعداد کارت در هر صفحه
+            spaceBetween: 8, // فاصله بین کارت‌ها به px
+            autoplay: true,
+            autoplayDelay: 3000,
+            loop: true,
+            showPagination: true,
+            showNavigation: true,
+            width: "100%",
+          }),
+          0.5,
+        ),
+      }),
+      3.6,
+      [
+        { key: "width", style: "auto" },
+        { key: "height", style: "auto" },
+      ],
+    ),
   );
 
   const page = MainPageLayout(container);

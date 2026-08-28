@@ -123,4 +123,5 @@
   > .product-information-controller
   > .left-item-controller > .button-item-controller {
     margin-top: 50px;
+    /* padding: 8px; */
   }

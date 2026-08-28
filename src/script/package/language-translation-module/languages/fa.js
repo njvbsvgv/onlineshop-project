@@ -137,11 +137,11 @@ const faData = {
     ],
     filterBox: {
       category: {
-        label: "دسته بندی"
+        label: "دسته بندی",
       },
       brand: {
-        label: "برند ها"
-      }
+        label: "برند ها",
+      },
     },
     listResult: "نتیجه",
     detail: {
@@ -150,14 +150,79 @@ const faData = {
       sizeLabel: "سایزبندی",
       colorLabel: "رنگ ها",
       addToBasket: "افزودن به سبد خرید",
-      similarProducts: "محصولات مشابه"
-    }
+      similarProducts: "محصولات مشابه",
+      commentData: {
+        inputData: [
+          {
+            label: "عنوان",
+            type: "text",
+            name: "title",
+            placeholder: "عنوان را وارد کنید",
+            isIconClick: false,
+            validation: {
+              required: true,
+              errorMessage: "این فیلد اجباری است",
+            },
+          },
+          {
+            label: "کامنت",
+            type: "text",
+            name: "comment",
+            placeholder: "نظر خود را وارد نمایید",
+            isIconClick: false,
+            validation: {
+              required: true,
+              errorMessage: "این فیلد اجباری است",
+            },
+          },
+        ],
+        btnData: {
+          submit: "ساختن",
+          reset: "لغو",
+        },
+      },
+    },
+  },
+  commentFormData: {
+    inputData: [
+      {
+        label: "عنوان",
+        type: "text",
+        name: "title",
+        placeholder: "عنوان را وارد کنید",
+        isIconClick: false,
+        validation: {
+          required: true,
+          errorMessage: "این فیلد اجباری است",
+        },
+      },
+      {
+        label: "کامنت",
+        type: "text",
+        name: "comment",
+        placeholder: "نظر خود را وارد نمایید",
+        isIconClick: false,
+        validation: {
+          required: true,
+          errorMessage: "این فیلد اجباری است",
+        },
+      },
+    ],
+    btnData: {
+      submit: "ساختن",
+      reset: "لغو",
+    },
+    cardData: {
+      title: "عنوان",
+      caption: "کپشن"
+    },
+    noResult: "کامنتی وجود ندارد"
   },
   toastMessge: {
     createOrder: {
       success: "محصول به سبد خرید شما اضافه شد✅",
       worning: "این محصول در سبد خرید شما موجود میباشد",
     },
-    error: "لطفا ابتدا وارد حساب کاربری خود شوید🚫"
-  }
+    error: "لطفا ابتدا وارد حساب کاربری خود شوید🚫",
+  },
 };

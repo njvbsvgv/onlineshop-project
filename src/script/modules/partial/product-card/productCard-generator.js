@@ -37,6 +37,7 @@ const ProductCard = ({
   const descriptionElem = document.createElement("p");
   descriptionElem.className = "description";
   descriptionElem.innerHTML = description;
+  descriptionElem.setAttribute("title", description)
 
   const bottomItemControl = document.createElement("div");
   bottomItemControl.className = "bottom-item-control";

@@ -8,7 +8,7 @@
     margin-top: 70px;
 }
 
-.description-and-comment-box > .top-item {
+.description-and-comment-box > div > .top-item {
     width: 100%;
     padding-block: 15px;
     background: #E6E8EA;
@@ -17,24 +17,35 @@
     justify-content: center;
 }
 
-.description-and-comment-box > .top-item > .description-and-comment-box-title-controller {
+.description-and-comment-box > div > .top-item > .description-and-comment-box-title-controller {
     width: 95%;
     display: flex;
     gap: 20px;
 
 }
 
-.description-and-comment-box > .top-item > .description-and-comment-box-title-controller > .text-elem {
+.description-and-comment-box > div > .top-item > .description-and-comment-box-title-controller > .text-elem {
     height: 33px;
     font-size: 15px;
 }
 
-.description-and-comment-box > .top-item > .description-and-comment-box-title-controller > .text-elem.active {
+.description-and-comment-box > div > .top-item > .description-and-comment-box-title-controller > .text-elem.active {
     font-weight: 600;
     color: black;
     border-bottom: 1px solid black;
 }
 
-.description-and-comment-box > .top-item > .description-and-comment-box-title-controller > .text-elem.not-active {
+.description-and-comment-box > div > .top-item > .description-and-comment-box-title-controller > .text-elem.not-active {
     cursor: pointer;
+}
+
+.description-and-comment-box > div > .bottom-item {
+    width: 100%;
+    padding-block: 40px;
+    margin-top: 30px;
+    background: white;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.035);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
 }
