@@ -151,6 +151,10 @@ const faData = {
       colorLabel: "رنگ ها",
       addToBasket: "افزودن به سبد خرید",
       similarProducts: "محصولات مشابه",
+      tabInputData: [
+        { text: "نظرات کاربران", className: "active" },
+        // { text: "نظرات کاربران", className: "not-active" },
+      ],
     },
   },
   commentFormData: {
@@ -184,9 +188,9 @@ const faData = {
     },
     cardData: {
       title: "عنوان",
-      caption: "کپشن"
+      caption: "کپشن",
     },
-    noResult: "کامنتی وجود ندارد"
+    noResult: "کامنتی وجود ندارد",
   },
   toastMessge: {
     createOrder: {

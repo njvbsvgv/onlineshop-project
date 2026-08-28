@@ -1,4 +1,5 @@
 const descriptionAndCommentBoxGenerator = (description, comment) => {
+    const t = languageTranslation("productPage.detail")
   const container = document.createElement("div");
   container.setAttribute("class", "description-and-comment-box");
 
@@ -16,10 +17,7 @@ const descriptionAndCommentBoxGenerator = (description, comment) => {
     },
   );
 
-  const text = textGeneration.generator([
-    { text: "نظرات کاربران", className: "active" },
-    // { text: "نظرات کاربران", className: "not-active" },
-  ]);
+  const text = textGeneration.generator(t("tabInputData"));
 
   topItem.appendChild(text);
 

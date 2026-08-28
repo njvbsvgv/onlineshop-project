@@ -151,6 +151,10 @@ const enData = {
       colorLabel: "Colors",
       addToBasket: "Add To Basket",
       similarProducts: "Similar Products",
+      tabInputData: [
+        { text: "User Comment", className: "active" },
+        // { text: "نظرات کاربران", className: "not-active" },
+      ],
     },
   },
   commentFormData: {
@@ -184,9 +188,9 @@ const enData = {
     },
     cardData: {
       title: "Title",
-      caption: "Caption"
+      caption: "Caption",
     },
-    noResult: "No comment reult"
+    noResult: "No comment reult",
   },
   toastMessage: {
     createOrder: {
