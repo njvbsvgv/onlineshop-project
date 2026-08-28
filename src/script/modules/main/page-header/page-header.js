@@ -1,5 +1,6 @@
 const PageHeader = () => {
   const t = languageTranslation("header");
+  let token = getDataFromLocalStorage("onlineshopAccessToken", false);
   const headerContainer = document.createElement("div");
   headerContainer.className = "page-header-container";
 
@@ -12,38 +13,79 @@ const PageHeader = () => {
   const bottomItem = document.createElement("div");
   bottomItem.className = "header-bottom-item";
 
-
   const bottomItemRight = document.createElement("div");
-  bottomItemRight.className = "right-item"
-  bottomItemRight.appendChild(
-    NavigationPage(t("navigationData")),
-  );
+  bottomItemRight.className = "right-item";
+  bottomItemRight.appendChild(NavigationPage(t("navigationData")));
 
-  const basketIcon = document.createElement("img")
-  basketIcon.src = "./src/assets/icons/menu-icon.svg"
-  basketIcon.className = "basket-icon"
+  const basketIcon = document.createElement("img");
+  basketIcon.src = "./src/assets/icons/menu-icon.svg";
+  basketIcon.className = "basket-icon";
 
   const bottomItemLeft = document.createElement("div");
-  bottomItemLeft.className = "left-item"
-  bottomItemLeft.appendChild(basketIcon)
+  bottomItemLeft.className = "left-item";
+  bottomItemLeft.appendChild(basketIcon);
 
   const language = getDataFromLocalStorage("language");
-    const changeLanguageHandler = (locale) => {
-      if (locale == "fa") {
-        updateLanguage("fa");
-      } else {
-        updateLanguage("en");
-      }
-      RebuildWebPages();
-    };
+  const changeLanguageHandler = (locale) => {
+    if (locale == "fa") {
+      updateLanguage("fa");
+    } else {
+      updateLanguage("en");
+    }
+    RebuildWebPages();
+  };
 
   const btnControl = document.createElement("div");
   btnControl.className = "btn-control";
+
+  const http = new httpInterceptore();
+  const userId = getDataFromLocalStorage("onlineshopUserId", true);
+  const user = http.get(`/users/${userId}`);
+  const btnGeneration = new BtnGeneratorClass(() => {
+    useUpdateRout("/auth/sign-in");
+  });
+
+  const dropdown = dropdownGenerator({
+    items: [
+      {
+        value: user.data?.fullName,
+        label: t("logoutBtn"),
+        select: t("logoutBtn"),
+      },
+    ],
+    value: "",
+    initialValue: user.data?.fullName,
+    onChange: () => {
+      deleteDataFromLocalStorage("onlineshopAccessToken");
+      deleteDataFromLocalStorage("onlineshopUserId");
+      token = getDataFromLocalStorage("onlineshopAccessToken", false);
+      btnControl.innerHTML = "";
+      btnControl.append(
+        languageSwitcherGenerator(language, changeLanguageHandler),
+        btnGeneration.generator(
+          token ? t("logoutBtn") : t("loginBtn"),
+          "button",
+          "btn",
+          false,
+        ),
+      );
+    },
+    className: "language-switcher",
+    triggerClassName: "language-switcher__trigger",
+    menuClassName: "language-switcher__dropdown",
+    itemClassName: "language-switcher__item",
+  });
+
   btnControl.append(
     languageSwitcherGenerator(language, changeLanguageHandler),
-    buttonGenerator(t("loginBtn"), "button", "btn", false, () => {
-      useUpdateRout("/auth/sign-in");
-    }),
+    !token
+      ? btnGeneration.generator(
+          token ? t("logoutBtn") : t("loginBtn"),
+          "button",
+          "btn",
+          false,
+        )
+      : dropdown,
   );
 
   const inputControl = document.createElement("div");
@@ -60,7 +102,7 @@ const PageHeader = () => {
         },
       ],
       100,
-      (event) => inputChangeHandler(event),
+      (event) => {},
     ),
   );
 

@@ -20,7 +20,7 @@ class httpInterceptore {
         response = response.find((el) => el.id == targetId);
       }
     }
-    console.log("targetId ==>", targetId)
+    // console.log("targetId ==>", targetId)
     return {
       status: 200,
       data: response ? response : null,
@@ -51,8 +51,10 @@ class httpInterceptore {
       }
     });
     const source = this.dataBase[url];
+    console.log("source ==>", source)
     const findIndex = source.findIndex((el) => el.id == targetId);
     const findData = source.find((el) => el.id == targetId);
+    console.log("findData ==>", findData)
     source[findIndex] = {id: findData.id, ...data};
     this.dataBase = { ...this.dataBase, [url]: source };
     localStorage.setItem("dataBase", JSON.stringify(this.dataBase));
@@ -77,5 +79,16 @@ class httpInterceptore {
       status: 200,
       message: "delete successfully✅"
     }
+  }
+}
+
+const requestMeddleware = (next) => {
+  const t = languageTranslation("toastMessge")
+  const token = getDataFromLocalStorage("onlineshopAccessToken", false)
+  if (token) {
+    next()
+  }else {
+    console.log(t("error"))
+    toast().error(t("error"))
   }
 }

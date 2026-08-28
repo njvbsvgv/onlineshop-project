@@ -30,14 +30,14 @@ const SignInPage = () => {
       ),
       buttonChildren: buttonGenerator(t("submitBtn"), "submit", "btn", true),
       submitHandler: (event) => {
-        console.log("event ==>", event)
         const formData = extractFormData(event, 2)
-        console.log("formData ==>", formData)
         const usersData = http.get(`/users/${formData.email}`);
-        console.log("usersData ==>", usersData)
         if (usersData.data) {
           if (formData.password == usersData.data.password) {
             toast().success(t("toastMessage.success"))
+            const token = tokenGenerator()
+            setDataToLocalStorage("onlineshopAccessToken", token, false)
+            setDataToLocalStorage("onlineshopUserId", usersData.data.id, true)
             useUpdateRout("/landing")
           }else {
             toast().error(t("toastMessage.passwordErrorMessage"))

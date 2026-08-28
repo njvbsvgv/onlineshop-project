@@ -1,14 +1,4 @@
-/**
- * Creates a custom button element.
- *
- * @param {string} text - Text displayed inside the button
- * @param {("button" | "submit" | "reset")} type - HTML button type
- * @param {string} name - Name attribute of the button
- * @param {boolean} styleType - true = filled style, false = border style
- * @returns {HTMLButtonElement} The generated button element
- */
-
-const buttonGenerator = (text, type, name, styleType, onClick) => {
+const buttonGenerator = (text, type, name, styleType, onClick, icon) => {
   const customBtn = document.createElement("button");
   if (onClick) {
     customBtn.addEventListener("click", () => {
@@ -25,6 +15,49 @@ const buttonGenerator = (text, type, name, styleType, onClick) => {
   }
   customBtn.setAttribute("type", type);
   customBtn.setAttribute("name", name);
+  console.log("icon ==>", icon);
+  if (icon) {
+    const iconElme = document.createElement("img");
+    iconElme.setAttribute("src", icon);
+    customBtn.appendChild(iconElme);
+  }
   customBtn.textContent = text;
   return customBtn;
 };
+
+class BtnGeneratorClass {
+  click = null;
+
+  constructor(clickHandler) {
+    if (clickHandler) {
+      this.click = clickHandler;
+    }
+  }
+
+  generator(text, type, name, styleType, icon) {
+    const customBtn = document.createElement("button");
+    if (this.click) {
+      customBtn.addEventListener("click", () => {
+        this.click();
+      });
+    }
+    switch (styleType) {
+      case true:
+        customBtn.classList.add("custom-btn");
+        break;
+      case false:
+        customBtn.classList.add("custom-btn-border");
+        break;
+    }
+    customBtn.setAttribute("type", type);
+    customBtn.setAttribute("name", name);
+    console.log("icon ==>", icon);
+    if (icon) {
+      const iconElme = document.createElement("img");
+      iconElme.setAttribute("src", icon);
+      customBtn.appendChild(iconElme);
+    }
+    customBtn.textContent = text;
+    return customBtn;
+  }
+}

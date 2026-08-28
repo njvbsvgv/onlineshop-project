@@ -1,0 +1,10 @@
+.btn-status {
+    outline: none;
+    border: 1px solid #00000030;
+    padding: 9px;
+    padding-inline: 15px;
+    border-radius: 20px;
+    background: transparent;
+    font-family: samim;
+    font-size: 13px;
+}

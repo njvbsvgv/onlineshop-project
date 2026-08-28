@@ -97,6 +97,7 @@ const enData = {
   },
   header: {
     loginBtn: "Login / Register",
+    logoutBtn: "Logout",
     navigationData: [
       { text: "Home Page", link: "/landing" },
       { text: "All Product", link: "/products" },
@@ -142,6 +143,13 @@ const enData = {
         label: "Brands",
       },
     },
-    listResult: "result"
+    listResult: "result",
+    detail: {
+      title: "Product Name",
+      desc: "Description",
+      sizeLabel: "Size",
+      colorLabel: "Colors",
+      addToBasket: "Add To Basket"
+    }
   },
 };

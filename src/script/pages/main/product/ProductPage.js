@@ -10,8 +10,8 @@ const ProductPage = () => {
   const sortItem = document.createElement("div");
   sortItem.setAttribute("class", "sort-item");
 
-  const listResultItem = document.createElement("span")
-  listResultItem.setAttribute("class", "list-result")
+  const listResultItem = document.createElement("span");
+  listResultItem.setAttribute("class", "list-result");
 
   const bottomItemController = document.createElement("div");
   bottomItemController.setAttribute("class", "bottom-item-controller");
@@ -33,7 +33,13 @@ const ProductPage = () => {
       "text",
       t("filterBox.category.label"),
     ),
-    FilterBoxGenerator(brandData, "checkbox", "brand", "text", t("filterBox.brand.label")),
+    FilterBoxGenerator(
+      brandData,
+      "checkbox",
+      "brand",
+      "text",
+      t("filterBox.brand.label"),
+    ),
   );
 
   sortItem.appendChild(inputGenerator(t("inputData"), 50));
@@ -53,26 +59,29 @@ const ProductPage = () => {
       productsData: products,
       cardController,
       renderItem: (item, list) => {
-        console.log("list ==>", list)
-        listResultItem.textContent = `${list ? list : 0} ${t("listResult")}`
+        console.log("list ==>", list);
+        listResultItem.textContent = `${list ? list : 0} ${t("listResult")}`;
         if (list > 0) {
-            cardController.appendChild(
-              Motion(
-                ProductCard({
-                  image: item.image,
-                  title: item.title,
-                  description: item.description,
-                  price: item.price,
-                  cardClick: () => console.log("product clicked:", item.id),
-                  favoriteClick: () => console.log("item ==>", item)
-                }),
-                0.2,
-                [
-                  { key: "width", style: "auto" },
-                  { key: "height", style: "auto" },
-                ],
-              ),
-            );
+          cardController.appendChild(
+            Motion(
+              ProductCard({
+                image: item.image,
+                title: item.title,
+                description: item.description,
+                price: item.price,
+                cardClick: () => {
+                  useUpdateRout("/product-detail", item.id);
+                  // alert(`Product Id: ${item.id}`)
+                },
+                favoriteClick: () => alert(`Product Id: ${item.id}`),
+              }),
+              0.2,
+              [
+                { key: "width", style: "auto" },
+                { key: "height", style: "auto" },
+              ],
+            ),
+          );
         }
       },
       searchInput: searchInputEl,

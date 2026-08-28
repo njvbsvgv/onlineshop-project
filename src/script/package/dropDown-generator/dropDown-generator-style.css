@@ -1,0 +1,261 @@
+/* ==========================================
+   Dropdown — Generic Component
+========================================== */
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  font-family: inherit;
+}
+
+
+/* ==========================================
+   Trigger
+========================================== */
+
+.dropdown__trigger {
+  display: inline-flex;
+  /* flex-direction: column; */
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  /* min-width: 8px; */
+  height: 43px;
+  padding: 0 14px;
+
+  border: 1px solid #c4c4c4;
+  border-radius: 10px;
+
+  outline: none;
+  cursor: pointer;
+
+  background: #fff;
+  color: #071a2d;
+
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 500;
+
+  box-shadow: 0 2px 10px rgba(7, 26, 45, 0.17);
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.dropdown__trigger > i {
+    display: none;
+}
+
+.dropdown__trigger > span {
+    text-align: center;
+}
+
+.dropdown__trigger:hover {
+  border-color: #c8d0d9;
+  box-shadow: 0 4px 12px rgba(7, 26, 45, 0.09);
+}
+
+.dropdown.is-open .dropdown__trigger {
+  border-color: #071a2d;
+  box-shadow: 0 4px 12px rgba(7, 26, 45, 0.09);
+}
+
+
+/* ==========================================
+   Trigger Label
+========================================== */
+
+.dropdown__trigger-label {
+  flex: 1;
+  text-align: right;
+  line-height: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+/* ==========================================
+   Chevron
+========================================== */
+
+.dropdown__chevron {
+  flex-shrink: 0;
+  width: 15px;
+  height: 15px;
+  opacity: 0.45;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.dropdown__trigger:hover .dropdown__chevron {
+  opacity: 0.7;
+}
+
+.dropdown.is-open .dropdown__chevron {
+  transform: rotate(180deg);
+  opacity: 0.7;
+}
+
+
+/* ==========================================
+   Menu
+========================================== */
+
+.dropdown__menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  z-index: 9999;
+
+  min-width: 100%;
+  padding: 5px;
+
+  border: 1px solid #e6ebf0;
+  border-radius: 12px;
+
+  background: #fff;
+  color: #071a2d;
+
+  box-shadow: 0 10px 30px rgba(7, 26, 45, 0.11);
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-6px) scale(0.98);
+  transform-origin: top right;
+
+  transition:
+    opacity 0.18s ease,
+    transform 0.18s ease,
+    visibility 0.18s ease;
+}
+
+.dropdown__menu--start {
+  right: auto;
+  left: 0;
+  transform-origin: top left;
+}
+
+.dropdown.is-open .dropdown__menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+}
+
+
+/* ==========================================
+   Item
+========================================== */
+
+.dropdown__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+
+  width: 100%;
+  min-height: 38px;
+  padding: 0 10px;
+
+  border: none;
+  border-radius: 8px;
+
+  outline: none;
+  cursor: pointer;
+
+  background: transparent;
+  color: #2d3e50;
+
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 500;
+
+  text-align: right;
+
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.dropdown__item:hover:not(:disabled):not(.is-active) {
+  background: #f4f6f8;
+}
+
+.dropdown__item:disabled {
+  cursor: default;
+}
+
+.dropdown__item.is-active {
+  background: #071a2d;
+  color: #fff;
+  font-weight: 600;
+  cursor: default;
+}
+
+
+/* ==========================================
+   Item Label
+========================================== */
+
+.dropdown__item-label {
+  flex: 1;
+  white-space: nowrap;
+}
+
+
+/* ==========================================
+   Item Check (آیکون تیک برای آیتم فعال)
+========================================== */
+
+.dropdown__item-check {
+  flex-shrink: 0;
+  width: 14px;
+  height: 14px;
+  color: #fff;
+}
+
+
+/* ==========================================
+   Dark Mode
+========================================== */
+
+.dark .dropdown__trigger,
+[data-theme="dark"] .dropdown__trigger {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.9);
+  box-shadow: none;
+}
+
+.dark .dropdown__trigger:hover,
+[data-theme="dark"] .dropdown__trigger:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.dark .dropdown.is-open .dropdown__trigger,
+[data-theme="dark"] .dropdown.is-open .dropdown__trigger {
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.dark .dropdown__menu,
+[data-theme="dark"] .dropdown__menu {
+  background: #111827;
+  border-color: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.dark .dropdown__item,
+[data-theme="dark"] .dropdown__item {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.dark .dropdown__item:hover:not(:disabled):not(.is-active),
+[data-theme="dark"] .dropdown__item:hover:not(:disabled):not(.is-active) {
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.dark .dropdown__item.is-active,
+[data-theme="dark"] .dropdown__item.is-active {
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+}

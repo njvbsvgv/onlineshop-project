@@ -72,6 +72,22 @@ const signUpInputData = [
 //   },
 // ];
 
+const sizeList = [
+  {id: 1, name: "XL"},
+  {id: 2, name: "L"},
+  {id: 3, name: "M"},
+  {id: 4, name: "S"},
+  {id: 5, name: "XS"},
+]
+
+const colorList = [
+  {id: 1, name: "آبی"},
+  {id: 2, name: "سبز"},
+  {id: 3, name: "سرمه ای"},
+  {id: 4, name: "صورتی"},
+  {id: 5, name: "مشکی"},
+]
+
 const products = [
   {
     id: 1,
@@ -98,7 +114,7 @@ const products = [
     isFavorite: false,
     isBasket: false,
     category: ["پیراهن"],
-    size: "xl",
+    size: ["xl"],
     status: ["پرفروش ترین"],
   },
   {
@@ -112,7 +128,7 @@ const products = [
     isFavorite: false,
     isBasket: false,
     category: ["پیراهن"],
-    size: "xl",
+    size: ["md", "xl", "2xl",],
     status: ["پرفروش ترین"],
   },
   {
@@ -126,7 +142,7 @@ const products = [
     isFavorite: false,
     isBasket: false,
     category: ["پیراهن"],
-    size: "xl",
+    size: ["xl"],
     status: ["پرفروش ترین"],
   },
   {
@@ -140,7 +156,7 @@ const products = [
     isFavorite: false,
     isBasket: false,
     category: ["پیراهن"],
-    size: "xl",
+    size: ["xl"],
     status: ["پرفروش ترین"],
   },
   {
@@ -154,7 +170,7 @@ const products = [
     isFavorite: false,
     isBasket: false,
     category: ["پیراهن"],
-    size: "xl",
+    size: ["xl"],
     status: ["پرفروش ترین"],
   },
   {
@@ -168,7 +184,7 @@ const products = [
     isFavorite: false,
     isBasket: false,
     category: ["پیراهن"],
-    size: "xl",
+    size: ["xl"],
     status: ["پرفروش ترین"],
   },
   {
@@ -182,7 +198,7 @@ const products = [
     isFavorite: false,
     isBasket: false,
     category: ["پیراهن"],
-    size: "xl",
+    size: ["xl"],
     status: ["پرفروش ترین"],
   },
   {
@@ -196,7 +212,7 @@ const products = [
     isFavorite: false,
     isBasket: false,
     category: ["پیراهن"],
-    size: "xl",
+    size: ["xl"],
     status: ["پرفروش ترین"],
   },
   {
@@ -210,7 +226,7 @@ const products = [
     isFavorite: false,
     isBasket: false,
     category: ["پیراهن"],
-    size: "xl",
+    size: ["xl"],
     status: ["پرفروش ترین"],
   },
   {
@@ -224,7 +240,7 @@ const products = [
     isFavorite: false,
     isBasket: false,
     category: ["پیراهن"],
-    size: "xl",
+    size: ["xl"],
     status: ["جدیدترین"],
   },
   {
@@ -238,7 +254,7 @@ const products = [
     isFavorite: false,
     isBasket: false,
     category: ["پیراهن"],
-    size: "xl",
+    size: ["xl"],
     status: ["جدیدترین"],
   },
   {
@@ -252,7 +268,7 @@ const products = [
     isFavorite: false,
     isBasket: false,
     category: ["پیراهن"],
-    size: "xl",
+    size: ["xl"],
     status: ["جدیدترین"],
   },
   {
@@ -266,7 +282,7 @@ const products = [
     isFavorite: false,
     isBasket: false,
     category: ["پیراهن"],
-    size: "xl",
+    size: ["xl"],
     status: ["جدیدترین"],
   },
   {
@@ -280,7 +296,7 @@ const products = [
     isFavorite: false,
     isBasket: false,
     category: ["پیراهن"],
-    size: "xl",
+    size: ["xl"],
     status: ["جدیدترین"],
   },
   {
@@ -294,7 +310,7 @@ const products = [
     isFavorite: false,
     isBasket: false,
     category: ["پیراهن"],
-    size: "xl",
+    size: ["xl"],
     status: ["جدیدترین"],
   },
   {
@@ -308,7 +324,7 @@ const products = [
     isFavorite: false,
     isBasket: false,
     category: ["پیراهن"],
-    size: "xl",
+    size: ["xl"],
     status: ["جدیدترین"],
   },
   {
@@ -322,7 +338,7 @@ const products = [
     isFavorite: false,
     isBasket: false,
     category: ["پیراهن"],
-    size: "xl",
+    size: ["xl"],
     status: ["جدیدترین"],
   },
 ];

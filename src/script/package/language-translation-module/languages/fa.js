@@ -96,6 +96,7 @@ const faData = {
   },
   header: {
     loginBtn: "ورود / ثبت نام",
+    logoutBtn: "خروج",
     navigationData: [
       { text: "صفحه اصلی", link: "/landing" },
       { text: "همه محصولات", link: "/products" },
@@ -142,6 +143,20 @@ const faData = {
         label: "برند ها"
       }
     },
-    listResult: "نتیجه"
+    listResult: "نتیجه",
+    detail: {
+      title: "نام محصول",
+      desc: "توضیحات",
+      sizeLabel: "سایزبندی",
+      colorLabel: "رنگ ها",
+      addToBasket: "افزودن به سبد خرید"
+    }
   },
+  toastMessge: {
+    createOrder: {
+      success: "محصول به سبد خرید شما اضافه شد✅",
+      worning: "این محصول در سبد خرید شما موجود میباشد",
+    },
+    error: "لطفا ابتدا وارد حساب کاربری خود شوید🚫"
+  }
 };
