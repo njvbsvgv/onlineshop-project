@@ -1,27 +1,24 @@
 /**
  * dropdownGenerator
  *
- * Dropdown کاستومایزپذیر و generic — بدون هیچ تنظیم اضافه‌ای کار می‌کنه.
  *
  * @param {Object}   options
- * @param {Array}    options.items               آیتم‌ها: [{ value, label, disabled? }]
- * @param {string}   [options.value]             مقدار انتخاب اولیه (پیش‌فرض: اولین آیتم)
- * @param {string}   [options.initaialValue]             مقدار انتخاب اولیه (پیش‌فرض: اولین آیتم)
- * @param {Function} [options.onChange]          callback تغییر: (value, item) => {}
- * @param {Function} [options.renderTrigger]     محتوای سفارشی trigger: (selectedItem) => Node
- * @param {Function} [options.renderItem]        محتوای سفارشی هر آیتم: (item, isActive) => Node
- * @param {string}   [options.placement]         'bottom-end' (پیش‌فرض) | 'bottom-start'
- * @param {string}   [options.className]         کلاس اضافی روی wrapper
- * @param {string}   [options.triggerClassName]  کلاس اضافی روی دکمه trigger
- * @param {string}   [options.menuClassName]     جایگزین کلاس menu (به‌جای dropdown__menu)
- * @param {string}   [options.itemClassName]     جایگزین کلاس هر item (به‌جای dropdown__item)
+ * @param {Array}    options.items               
+ * @param {string}   [options.value]             
+ * @param {string}   [options.initaialValue]             
+ * @param {Function} [options.onChange]          
+ * @param {Function} [options.renderTrigger]    
+ * @param {Function} [options.renderItem]       
+ * @param {string}   [options.placement]        
+ * @param {string}   [options.className]         
+ * @param {string}   [options.triggerClassName]  
+ * @param {string}   [options.menuClassName]     
+ * @param {string}   [options.itemClassName]    
  *
- * @returns {HTMLElement} wrapper — با متدهای عمومی:
+ * @returns {HTMLElement} 
  *   .getValue()
  *   .setValue(value)
  *   .open() / .close() / .toggle()
- *
- * ─── ساده‌ترین استفاده ───────────────────────
  *
  *   const dd = dropdownGenerator({
  *     items: [
@@ -49,7 +46,6 @@ const dropdownGenerator = ({
   menuClassName = "",
   itemClassName = "",
 } = {}) => {
-  // اگر value داده نشده، اولین آیتم پیش‌فرضه
   let currentValue =
     value !== undefined ? value : items[0] ? items[0].value : undefined;
 
@@ -109,7 +105,6 @@ const dropdownGenerator = ({
 
   // ============================================
   // Render Trigger
-  // پیش‌فرض: label آیتم انتخاب‌شده + chevron
   // ============================================
 
   function renderTriggerContent() {
@@ -136,13 +131,11 @@ const dropdownGenerator = ({
 
   // ============================================
   // Render Menu
-  // پیش‌فرض: label + تیک برای آیتم فعال
   // ============================================
 
     function renderItem(item, isActive) {
     const fragment = document.createDocumentFragment();
 
-    // سمت چپ: badge + label
     const left = document.createElement("span");
     left.className = "language-switcher__item-left";
 
@@ -157,7 +150,6 @@ const dropdownGenerator = ({
     left.append(badge, label);
     fragment.appendChild(left);
 
-    // تیک — فقط برای آیتم فعال
     if (isActive) {
       const check = document.createElement("span");
       check.className = "language-switcher__check";
@@ -189,7 +181,7 @@ const dropdownGenerator = ({
       if (typeof renderItem === "function") {
         setContent(btn, renderItem(item, isActive));
       } else {
-        // ─── پیش‌فرض ───────────────────────────
+        // ─── default ───────────────────────────
         const label = document.createElement("span");
         label.className = "dropdown__item-label";
         label.textContent = item.label;
@@ -260,15 +252,14 @@ const dropdownGenerator = ({
     toggle();
   });
 
-  // کلیک داخل منو bubble نکنه (تا document listener منو رو نبنده)
   menu.addEventListener("click", (event) => {
     event.stopPropagation();
   });
 
-  // کلیک خارج → بستن
+  // close btn
   document.addEventListener("click", () => close());
 
-  // Escape → بستن
+  // Escape
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") close();
   });
@@ -289,7 +280,7 @@ const dropdownGenerator = ({
   wrapper.close = close;
   wrapper.toggle = toggle;
 
-  // رندر اولیه
+  // one step rendering
   render();
 
   return wrapper;

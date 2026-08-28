@@ -175,7 +175,9 @@ const ProductDetailPage = () => {
         "button",
         "",
         true,
-        () => {addToBasketHandler(productId)},
+        () => {
+          addToBasketHandler(productId);
+        },
         "./src/assets/icons/arrow-light.svg",
       ),
       2.6,
@@ -202,7 +204,40 @@ const ProductDetailPage = () => {
   productInformationController.append(rightItemController, leftItemController);
   // top items
 
-  container.append(productInformationController);
+  const similerProduct = getSimilerProduct(product.data.category);
+  console.log("similerProduct ==>", similerProduct);
+  container.append(
+    productInformationController,
+    descriptionAndCommentBoxGenerator(),
+    ProductBox({
+      title: t("similarProducts"),
+      children: Motion(
+        sliderGenerator({
+          children: similerProduct.map((item) =>
+            ProductCard({
+              image: item.image,
+              title: item.title,
+              description: item.description,
+              price: item.price,
+              cardClick: () => {
+                useUpdateRout("/product-detail", item.id);
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              },
+            }),
+          ),
+          slidesPerView: 5, // تعداد کارت در هر صفحه
+          spaceBetween: 8, // فاصله بین کارت‌ها به px
+          autoplay: true,
+          autoplayDelay: 3000,
+          loop: true,
+          showPagination: true,
+          showNavigation: true,
+          width: "100%",
+        }),
+        0.5,
+      ),
+    }),
+  );
 
   const page = MainPageLayout(container);
   return page;

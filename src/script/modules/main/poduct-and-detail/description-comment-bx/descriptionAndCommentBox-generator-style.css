@@ -1,0 +1,40 @@
+.description-and-comment-box {
+    width: 100%;
+    padding-block: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 70px;
+}
+
+.description-and-comment-box > .top-item {
+    width: 100%;
+    padding-block: 15px;
+    background: #E6E8EA;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.description-and-comment-box > .top-item > .description-and-comment-box-title-controller {
+    width: 95%;
+    display: flex;
+    gap: 20px;
+
+}
+
+.description-and-comment-box > .top-item > .description-and-comment-box-title-controller > .text-elem {
+    height: 33px;
+    font-size: 15px;
+}
+
+.description-and-comment-box > .top-item > .description-and-comment-box-title-controller > .text-elem.active {
+    font-weight: 600;
+    color: black;
+    border-bottom: 1px solid black;
+}
+
+.description-and-comment-box > .top-item > .description-and-comment-box-title-controller > .text-elem.not-active {
+    cursor: pointer;
+}

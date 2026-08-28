@@ -149,7 +149,8 @@ const enData = {
       desc: "Description",
       sizeLabel: "Size",
       colorLabel: "Colors",
-      addToBasket: "Add To Basket"
+      addToBasket: "Add To Basket",
+      similarProducts: "Similar Products"
     }
   },
 };

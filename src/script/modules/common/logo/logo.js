@@ -10,11 +10,11 @@ const Logo = ({ onClick }) => {
 
   const logoText = document.createElement("span");
   logoText.className = "logo-text";
-  logoText.textContent = "لوگو";
+  // logoText.textContent = "لوگو";
 
   const logoImage = document.createElement("img");
   logoImage.src = "./src/assets/icons/logo.svg";
 
-  logo.append(logoImage, logoText);
+  logo.append(logoImage);
   return logo;
 };

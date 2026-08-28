@@ -22,43 +22,6 @@ const languages = [
 
 const languageSwitcherGenerator = (locale, clickHandler) => {
   // ============================================
-  // renderItem — badge + label + check
-  // ============================================
-
-  // function renderItem(item, isActive) {
-  //   const fragment = document.createDocumentFragment();
-
-  //   // سمت چپ: badge + label
-  //   const left = document.createElement("span");
-  //   left.className = "language-switcher__item-left";
-
-  //   const badge = document.createElement("span");
-  //   badge.className = "language-switcher__badge";
-  //   badge.textContent = item.badge;
-
-  //   const label = document.createElement("span");
-  //   label.className = "language-switcher__label";
-  //   label.textContent = item.label;
-
-  //   left.append(badge, label);
-  //   fragment.appendChild(left);
-
-  //   // تیک — فقط برای آیتم فعال
-  //   if (isActive) {
-  //     const check = document.createElement("span");
-  //     check.className = "language-switcher__check";
-
-  //     const checkIcon = document.createElement("i");
-  //     checkIcon.setAttribute("data-lucide", "check");
-  //     check.appendChild(checkIcon);
-
-  //     fragment.appendChild(check);
-  //   }
-
-  //   return fragment;
-  // }
-
-  // ============================================
   // ساخت Dropdown
   // ============================================
 

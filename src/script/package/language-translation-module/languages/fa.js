@@ -149,7 +149,8 @@ const faData = {
       desc: "توضیحات",
       sizeLabel: "سایزبندی",
       colorLabel: "رنگ ها",
-      addToBasket: "افزودن به سبد خرید"
+      addToBasket: "افزودن به سبد خرید",
+      similarProducts: "محصولات مشابه"
     }
   },
   toastMessge: {

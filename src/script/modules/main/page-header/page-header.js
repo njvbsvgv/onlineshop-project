@@ -50,7 +50,7 @@ const PageHeader = () => {
       {
         value: user.data?.fullName,
         label: t("logoutBtn"),
-        select: t("logoutBtn"),
+        badge: t("logoutBtn")[0],
       },
     ],
     value: "",
