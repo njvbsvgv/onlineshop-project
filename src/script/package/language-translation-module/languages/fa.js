@@ -151,36 +151,6 @@ const faData = {
       colorLabel: "رنگ ها",
       addToBasket: "افزودن به سبد خرید",
       similarProducts: "محصولات مشابه",
-      commentData: {
-        inputData: [
-          {
-            label: "عنوان",
-            type: "text",
-            name: "title",
-            placeholder: "عنوان را وارد کنید",
-            isIconClick: false,
-            validation: {
-              required: true,
-              errorMessage: "این فیلد اجباری است",
-            },
-          },
-          {
-            label: "کامنت",
-            type: "text",
-            name: "comment",
-            placeholder: "نظر خود را وارد نمایید",
-            isIconClick: false,
-            validation: {
-              required: true,
-              errorMessage: "این فیلد اجباری است",
-            },
-          },
-        ],
-        btnData: {
-          submit: "ساختن",
-          reset: "لغو",
-        },
-      },
     },
   },
   commentFormData: {

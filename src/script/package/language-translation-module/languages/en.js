@@ -151,36 +151,6 @@ const enData = {
       colorLabel: "Colors",
       addToBasket: "Add To Basket",
       similarProducts: "Similar Products",
-      commentData: {
-        inputData: [
-          {
-            label: "Title",
-            type: "text",
-            name: "title",
-            placeholder: "Enter the title",
-            isIconClick: false,
-            validation: {
-              required: true,
-              errorMessage: "This field is required",
-            },
-          },
-          {
-            label: "Comment",
-            type: "text",
-            name: "comment",
-            placeholder: "Enter your comment",
-            isIconClick: false,
-            validation: {
-              required: true,
-              errorMessage: "This field is required",
-            },
-          },
-        ],
-        btnData: {
-          submit: "Submit",
-          reset: "Reset",
-        },
-      },
     },
   },
   commentFormData: {
