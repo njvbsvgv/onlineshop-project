@@ -1,5 +1,6 @@
 const ProductPage = () => {
   const t = languageTranslation("productPage");
+  metaDataGenerator("products");
 
   const container = document.createElement("div");
   container.className = "product-page-container";

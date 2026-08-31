@@ -1,6 +1,8 @@
 const LadingPage = () => {
   const t = languageTranslation("landing");
 
+  metaDataGenerator("landing");
+
   const imageData = [
     {
       id: 1,

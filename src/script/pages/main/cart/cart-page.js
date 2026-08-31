@@ -5,6 +5,8 @@ const CartPage = () => {
   const container = document.createElement("div");
   container.setAttribute("class", "cart-page-container");
 
+  metaDataGenerator("cart");
+
   const topItemController = document.createElement("div");
   topItemController.setAttribute("class", "top-item-controller");
 

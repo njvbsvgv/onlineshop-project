@@ -2,6 +2,8 @@ const colorAndSizeBox = (labelText, children) => {
   const container = document.createElement("div");
   container.setAttribute("class", "size-section-controller");
 
+  metaDataGenerator("product-detail");
+
   const label = document.createElement("span");
   label.setAttribute("class", "size-section-label");
   label.textContent = labelText;

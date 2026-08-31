@@ -3,6 +3,8 @@ const SignInPage = () => {
     useUpdateRout("/auth/sign-up");
   };
 
+  metaDataGenerator("auth-sign-in");
+
   // textAnimation("ورود به حساب کاربری", 100, 0, (title) => {
   //   const element = (document.getElementById("miniTitle").innerHTML = title);
   // });

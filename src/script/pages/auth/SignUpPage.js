@@ -3,6 +3,8 @@ const SignUpPage = () => {
     useUpdateRout("/auth/sign-in");
   };
 
+  metaDataGenerator("auth-sign-up");
+
   const t = languageTranslation("auth.register");
   const http = new httpInterceptore();
   let userData = http.get("/users");
