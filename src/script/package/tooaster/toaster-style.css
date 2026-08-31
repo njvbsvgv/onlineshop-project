@@ -45,7 +45,7 @@
 }
 
 .toasetr-btn-elem.error {
-    background: red;
+    background: rgb(255, 82, 82);
 }
 
 .toasetr-btn-elem.worning {

@@ -101,7 +101,18 @@ const enData = {
     navigationData: [
       { text: "Home Page", link: "/landing" },
       { text: "All Product", link: "/products" },
-      { text: "News", link: "/news" },
+    ],
+    themeModeData: [
+      {
+        value: "light",
+        label: "Light ☀️",
+        badge: "☀️",
+      },
+      {
+        value: "dark",
+        label: "Dark 🌙",
+        badge: "🌙",
+      },
     ],
     inputPlaceholder: "Brand name or...",
   },
@@ -151,11 +162,23 @@ const enData = {
       colorLabel: "Colors",
       addToBasket: "Add To Basket",
       similarProducts: "Similar Products",
-      tabInputData: [
-        { text: "User Comment", className: "active" },
-        // { text: "نظرات کاربران", className: "not-active" },
-      ],
+      productInfoLabel: "Additional Information",
+      tabInputData: {
+        userComment: "User Reviews",
+        description: "Product Description",
+      },
     },
+  },
+  cartPage: {
+    yourShopingCart: "Your Shoping Cart",
+    purchaseDetails: "Purchase Details",
+    noOrderResultMessage: "Your cart is empty",
+    btnText: "Order Now",
+    shippingCost: "Shipping cost",
+    freeShipping: "Free shipping",
+    product: "Product",
+    totalAmount: "Total Amount",
+    placeOrder: "Place Order",
   },
   commentFormData: {
     inputData: [
@@ -196,6 +219,19 @@ const enData = {
     createOrder: {
       success: "Product added to your cart successfully ✅",
       warning: "This product is already in your cart",
+    },
+    comment: {
+      success: "Your comment was successfully submitted 😍",
+      worning: "You have already submitted 3 comments",
+      likeMessage: {
+        success: "Like added successfully ✅",
+        worning: "You have already liked this comment",
+      },
+
+      dislikeMessage: {
+        success: "Dislike added successfully ✅",
+        worning: "You have already disliked this comment",
+      },
     },
     error: "Please log in to your account first 🚫",
   },

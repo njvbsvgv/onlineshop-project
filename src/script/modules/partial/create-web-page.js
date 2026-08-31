@@ -15,9 +15,6 @@
 //   webPages.authPages.signUpPage.appendChild(SignUpPage());
 // };
 
-
-
-
 let currentRoutData = [];
 
 const CreateWebPages = (routData) => {
@@ -26,24 +23,39 @@ const CreateWebPages = (routData) => {
 };
 
 const RebuildWebPages = () => {
-  const pathName = localStorage.getItem("routName");
-  const language = localStorage.getItem("language")
+  let pathName = localStorage.getItem("routName");
+  const language = localStorage.getItem("language");
   const rootElement = document.getElementById("root");
 
   if (language) {
     if (language == "fa") {
-      document.body.dir = "rtl"
-    }else {
-      document.body.dir = "ltr"
+      document.body.dir = "rtl";
+    } else {
+      document.body.dir = "ltr";
     }
   }
 
   rootElement.innerHTML = "";
 
   currentRoutData.forEach((item) => {
+    // console.log("item ==>", item)
+    // if (item.check) {
+    //   console.log(item.check)
+    //   const token = localStorage.getItem("onlineshopAccessToken");
+    //   if (!token) {
+    //     localStorage.setItem("routName", "/landing");
+    //   }
+    // }
+    // pathName = localStorage.getItem("routName");
+    // console.log("pathName ==>", pathName)
     if (item.path.includes(pathName)) {
       const element = item.element();
       rootElement.append(element);
     }
   });
+
+  // console.log("flag ==>", flag)
+  // if (flag) {
+  //   useUpdateRout("/")
+  // }
 };

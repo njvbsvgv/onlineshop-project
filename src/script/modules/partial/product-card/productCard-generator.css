@@ -1,5 +1,5 @@
 .product-card {
-  width: 250px;
+  width: 220px;
   height: 350px;
   overflow: hidden;
   border: 0.5px solid rgb(228, 228, 228);
@@ -38,7 +38,7 @@
   position: absolute;
   top: 5px;
   /* right: 0; */
-  inset-inline-start: 85%;
+  inset-inline-start: 80%;
 }
 
 .product-card > .image-control > .addto-favorite-btn > img {
@@ -73,7 +73,7 @@
 .product-card > .bottom-item-control > .show-detail-btn {
   outline: none;
   border: none;
-  background: #000;
+  background: var(--text-active);
   color: #fff;
   border-radius: 10px;
   padding-inline: 12px;
@@ -81,7 +81,7 @@
   cursor: pointer;
   font-size: 12px;
   font-family: samim;
-  box-shadow: 0 0 10px rgb(0 0 0 / 68%);
+  box-shadow: 0 0 10px var(--text-active);
   margin-bottom: -200px;
   transition: 0.4s;
 }

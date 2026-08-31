@@ -77,6 +77,14 @@
         <script src="./src/script/modules/main/poduct-and-detail/comment-card/comment-card.js"></script>
         <link rel="stylesheet" href="./src/script/modules/main/poduct-and-detail/comment-card/comment-section-style.css">
       <!-- comment -->
+      <!-- CartCard -->
+        <script src="./src/script/modules/main/cart/CartCard.js"></script>
+        <link rel="stylesheet" href="./src/script/modules/main/cart/cartCard-generator-style.css">
+      <!-- CartCard -->
+      <!-- purchaseDetails -->
+        <script src="./src/script/modules/main/cart/purchaseDetails-generator.js"></script>
+        <link rel="stylesheet" href="./src/script/modules/main/cart/purchaseDetails-generator-style.css">
+      <!-- purchaseDetails -->
     <!-- modules link -->
 
     <!-- pages links -->
@@ -99,6 +107,10 @@
          <script src="./src/script/pages/main/product/detail/ProductDetailPage.js"></script>
          <link rel="stylesheet" href="./src/script/pages/main/product/detail/productdetail-page-style.css">
         <!-- product detail page -->
+        <!-- cart page -->
+         <script src="./src/script/pages/main/cart/cart-page.js"></script>
+         <link rel="stylesheet" href="./src/script/pages/main/cart/cart-page-style.css">
+        <!-- cart page -->
       <!-- main pages -->
     <!-- pages links -->
 
@@ -129,6 +141,7 @@
       <link rel="stylesheet" href="./src/script/package/status-btn/status-btn-generator-style.css">
       <script src="./src/script/package/dropDown-generator/dropDown-generator.js"></script>
       <link rel="stylesheet" href="./src/script/package/dropDown-generator/dropDown-generator-style.css">
+      <script src="./src/script/package/toggleTheme-generator/toggleTheme-generator.js"></script>
     <!-- package links -->
 
     <!-- animation links -->
@@ -140,6 +153,7 @@
       <script src="./src/services/addToBasketHandler.js"></script>
       <script src="./src/services/getSimilerProduct.js"></script>
       <script src="./src/services/comment-api.js"></script>
+      <script src="./src/services/cart-api.js"></script>
     <!-- api links -->
 
     <!-- script links -->
@@ -158,7 +172,7 @@
     <script src="./src/script/package/metadata/metadata-generator.js"></script>
     <!-- script links -->
   </head>
-  <body dir="rtl">
+  <body dir="rtl" class="light">
     <!-- <div class="auth-pages-controller" id="authPagesController">
       <div class="sign-in show-flex" id="signInPage"></div>
       <div class="sign-up hide" id="signUpPage"></div>
@@ -169,7 +183,7 @@
         <div class="productdetail-page" id="productDetailPage"></div>
         <div class="basket-page" id="basketPage"></div>
     </div> -->
-    <!-- <img src="./src/assets/icons/arrow.svg" alt=""> -->
+    <!-- <img src="./src/assets/icons/trash.svg" alt=""> -->
     <div id="root"></div>
     <script src="./src/script/finalScript.js"></script>
   </body>

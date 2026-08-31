@@ -1,31 +1,72 @@
 body {
-    margin: 0;
-    font-family: samim;
-    background: #F8F8F8;
+  margin: 0;
+  font-family: samim;
+  background: #f8f8f8;
 }
 
 @font-face {
-    font-family: shabnam;
-    src: url(../assets/fonts/Shabnam-FD.ttf);
+  font-family: shabnam;
+  src: url(../assets/fonts/Shabnam-FD.ttf);
 }
 
 @font-face {
-    font-family: samim;
-    src: url(../assets/fonts/Samim-FD.ttf);
+  font-family: samim;
+  src: url(../assets/fonts/Samim-FD.ttf);
 }
 
 .hide {
-    display: none;
+  display: none;
 }
 
 .show {
-    display: block;
+  display: block;
 }
 
 .show-flex {
-    display: flex;
+  display: flex;
 }
 
 html {
-    user-select: none;
+  user-select: none;
+}
+
+/* :root {
+  --ligth-color: white;
+  --dark-color: black;
+  --ligth-background: white;
+  --dark-background: black;
+  --border-light: white;
+  --border-dark: black;
+} */
+
+.dark {
+  /* color: var(--ligth-color);
+  background: var(--dark-background); */
+  --color-theme: white;
+  --background-theme: black;
+  --bacground-theme-box: rgb(24, 24, 24);
+  --border-theme: rgb(159, 159, 159);
+  --border-active: orange;
+  --border-active-opacity: rgba(255, 166, 0, 0.316);
+  --text-active: orange;
+  --text-notactive: white;
+  --box-hover: rgb(24, 24, 24);
+
+  color: var(--color-theme);
+  background: var(--background-theme);
+}
+
+.light {
+  --color-theme: black;
+  --background-theme: white;
+  --bacground-theme-box: white;
+  --border-active: white;
+  --border-active-opacity: rgba(0, 0, 0, 0.211);
+  --border-theme: rgb(216, 216, 216);
+  --text-active: black;
+  --text-notactive: rgb(144, 144, 144);
+  --box-hover: white;
+
+  color: var(--color-theme);
+  background: var(--background-theme);
 }

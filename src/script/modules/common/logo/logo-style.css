@@ -8,10 +8,12 @@
     gap: 8px;
 }
 
-.logo-control > img {
+.logo-control > svg {
     width: 35px;
     height: 35px;
     /* size: 50px; */
+    /* color: white;
+    stroke: wheat; */
 }
 
 .logo-control > .logo-text {

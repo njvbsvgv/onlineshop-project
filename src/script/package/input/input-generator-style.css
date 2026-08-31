@@ -35,7 +35,9 @@
 .custom-input-section-container > .custom-input-control > .custom-input {
   width: 100%;
   outline: none;
-  border: 1px solid #dddddd;
+  border: 1px solid var(--border-theme);
+  background: var(--background-theme);
+  color: var(--color-theme);
   padding-inline: 8px;
   padding-block: 13px;
   border-radius: 15px;

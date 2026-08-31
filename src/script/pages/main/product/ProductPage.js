@@ -70,7 +70,7 @@ const ProductPage = () => {
                 description: item.description,
                 price: item.price,
                 cardClick: () => {
-                  useUpdateRout("/product-detail", item.id);
+                  useUpdateRout("/product-detail", {data: {productId: item.id}});
                   // alert(`Product Id: ${item.id}`)
                 },
                 favoriteClick: () => alert(`Product Id: ${item.id}`),

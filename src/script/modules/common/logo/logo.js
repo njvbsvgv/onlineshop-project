@@ -1,20 +1,29 @@
 const Logo = ({ onClick }) => {
-  const logo = document.createElement("button");
+  const logo = document.createElement("span");
   logo.className = "logo-control";
+  logo.innerHTML = `
+      <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path
+    d="M6.5 9.75V18.0744C6.5 20.0365 6.5 21.0175 7.13461 21.6271C8.55821 22.9945 17.1771 23.2488 18.8654 21.6271C19.5 21.0175 19.5 20.0365 19.5 18.0744V9.75"
+    stroke="orange"
+    stroke-width="1.5"
+    stroke-linecap="round"
+  />
 
+  <path
+    d="M6.21896 13L3.29665 10.1716C2.54322 9.44236 2.1665 9.07775 2.1665 8.62467C2.1665 8.17159 2.54322 7.80698 3.29665 7.07775L5.46437 4.9797C5.83996 4.61616 6.02775 4.4344 6.25162 4.30049C6.47549 4.16658 6.72746 4.08529 7.23137 3.92271L9.01438 3.34747C9.27509 3.26336 9.40543 3.22131 9.49407 3.27186C9.58271 3.32243 9.6107 3.46808 9.66668 3.75936C9.95955 5.28325 11.3405 6.43701 12.9998 6.43701C14.6592 6.43701 16.0401 5.28325 16.333 3.75936C16.3889 3.46808 16.417 3.32243 16.5056 3.27186C16.5942 3.22131 16.7246 3.26336 16.9853 3.34747L18.7683 3.92271C19.2722 4.08529 19.5242 4.16658 19.748 4.30049C19.972 4.4344 20.1597 4.61616 20.5353 4.9797L22.703 7.07775C23.4565 7.80698 23.8332 8.17159 23.8332 8.62467C23.8332 9.07775 23.4565 9.44236 22.703 10.1716L19.7807 13"
+    stroke="orange"
+    stroke-width="1.5"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+</svg>
+  `;
+  const logoSvg = logo.firstElementChild;
   if (onClick) {
-    logo.addEventListener("click", () => {
+    logoSvg.addEventListener("click", () => {
       onClick();
     });
   }
-
-  const logoText = document.createElement("span");
-  logoText.className = "logo-text";
-  // logoText.textContent = "لوگو";
-
-  const logoImage = document.createElement("img");
-  logoImage.src = "./src/assets/icons/logo.svg";
-
-  logo.append(logoImage);
   return logo;
 };

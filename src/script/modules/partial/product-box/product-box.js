@@ -1,6 +1,6 @@
 const ProductBox = ({ title, children }) => {
   const t = languageTranslation("landing")
-  console.log("children ==>", children);
+  // console.log("children ==>", children);
   const container = document.createElement("div");
   container.className = "product-box-container";
 

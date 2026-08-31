@@ -15,13 +15,65 @@ const commentWrapper = () => {
 
   const cardGeneration = new commentCardGenerator(
     (id) => {
-      console.log("id ==>", id);
+      const result = likeHandler(id);
+      console.log("result ==>", result);
+      if (result) {
+        commentData = getCommentListHandler();
+        listWrapper.innerHTML = "";
+        commentData.forEach((item) => {
+          listWrapper.appendChild(
+            Motion(
+              cardGeneration.generator({
+                id: item.id,
+                userName: item.userName,
+                startTitle: t("cardData.title"),
+                endTitle: item.title,
+                startDesc: t("cardData.caption"),
+                endDesc: item.comment,
+                likeNum: item.likeCount,
+                dislikeNum: item.dislikeCount,
+              }),
+              0,
+              [
+                { key: "width", style: "100%" },
+                { key: "height", style: "auto" },
+              ],
+            ),
+          );
+        });
+      }
     },
     (id) => {
-      console.log("id ==>", id);
+      const result = dislikeHandler(id);
+      if (result) {
+        commentData = getCommentListHandler();
+        listWrapper.innerHTML = "";
+        commentData.forEach((item) => {
+          listWrapper.appendChild(
+            Motion(
+              cardGeneration.generator({
+                id: item.id,
+                userName: item.userName,
+                startTitle: t("cardData.title"),
+                endTitle: item.title,
+                startDesc: t("cardData.caption"),
+                endDesc: item.comment,
+                likeNum: item.likeCount,
+                dislikeNum: item.dislikeCount,
+              }),
+              0,
+              [
+                { key: "width", style: "100%" },
+                { key: "height", style: "auto" },
+              ],
+            ),
+          );
+        });
+      }
     },
   );
 
+  console.log("commentData ==>", commentData);
   const submitHandler = (target) => {
     const formData = extractFormData(target, 3);
     const createResult = createCommentHandler(formData);
@@ -32,7 +84,7 @@ const commentWrapper = () => {
         listWrapper.appendChild(
           Motion(
             cardGeneration.generator({
-              id: item.productId,
+              id: item.id,
               userName: item.userName,
               startTitle: t("cardData.title"),
               endTitle: item.title,

@@ -125,3 +125,16 @@
     margin-top: 50px;
     /* padding: 8px; */
   }
+
+.product-info-controller {
+  width: 95%;
+}
+
+.product-info-controller > h4 {
+  margin: 0;
+  font-size: 17px;
+}
+
+.product-info-controller > p {
+  line-height: 40px;
+}

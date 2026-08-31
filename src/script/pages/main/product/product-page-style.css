@@ -41,5 +41,6 @@
     width: 80%;
     display: flex;
     flex-flow: row wrap;
-    gap: 15px;
+    gap: 35PX;
+    /* justify-content: space-between; */
 }

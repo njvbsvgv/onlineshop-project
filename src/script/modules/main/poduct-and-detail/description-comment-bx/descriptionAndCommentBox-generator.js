@@ -1,5 +1,5 @@
 const descriptionAndCommentBoxGenerator = (description, comment) => {
-    const t = languageTranslation("productPage.detail")
+  const t = languageTranslation("productPage.detail");
   const container = document.createElement("div");
   container.setAttribute("class", "description-and-comment-box");
 
@@ -11,17 +11,45 @@ const descriptionAndCommentBoxGenerator = (description, comment) => {
 
   const textGeneration = new descriptionAndCommentBoxTitleGenerator(
     (selectedIndex) => {
-      selectedIndexv === 0
-        ? bottomItem.appendChild(description)
-        : bottomItem.appendChild(comment);
+      topItem.innerHTML = "";
+      bottomItem.innerHTML = "";
+      if (selectedIndex === 0) {
+        topItem.appendChild(
+          textGeneration.generator([
+            { text: t("tabInputData.description"), className: "active" },
+            { text: t("tabInputData.userComment"), className: "not-active" },
+          ]),
+        );
+        bottomItem.appendChild(description);
+      } else {
+        topItem.appendChild(
+          textGeneration.generator([
+            { text: t("tabInputData.description"), className: "not-active" },
+            { text: t("tabInputData.userComment"), className: "active" },
+          ]),
+        );
+        bottomItem.appendChild(comment);
+      }
     },
   );
 
-  const text = textGeneration.generator(t("tabInputData"));
+  const text = textGeneration.generator([
+    { text: t("tabInputData.description"), className: "active" },
+    { text: t("tabInputData.userComment"), className: "not-active" },
+  ]);
 
   topItem.appendChild(text);
 
-  bottomItem.appendChild(commentWrapper())
-  container.append(Motion(topItem, 2.8, [{key: "width", style: "100%"}, {key: "height", style: "auto"}]), Motion(bottomItem, 3, [{key: "width", style: "100%"}, {key: "height", style: "auto"}]));
+  bottomItem.appendChild(description);
+  container.append(
+    Motion(topItem, 2.8, [
+      { key: "width", style: "100%" },
+      { key: "height", style: "auto" },
+    ]),
+    Motion(bottomItem, 3, [
+      { key: "width", style: "100%" },
+      { key: "height", style: "auto" },
+    ]),
+  );
   return container;
 };

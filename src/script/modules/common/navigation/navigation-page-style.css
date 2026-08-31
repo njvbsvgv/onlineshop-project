@@ -11,10 +11,10 @@
 }
 
 .navigation-container > .navigation-text.navigation-text-noactive {
-    color: #646464;
+    color: var(--text-notactive);
 }
 
 .navigation-container > .navigation-text.navigation-text-active {
-    color: #08182A;
+    color: var(--text-active);
     font-weight: 600;
 }

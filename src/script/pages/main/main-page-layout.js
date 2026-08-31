@@ -8,7 +8,7 @@ const MainPageLayout = (children) => {
 
     const holder = document.createElement("div")
     holder.className = "pages-holder"
-    holder.style.width = "85%"
+    holder.style.width = "90%"
     holder.appendChild(children)
 
     holderContainer.append(PageHeader(), holder, PageFooter())

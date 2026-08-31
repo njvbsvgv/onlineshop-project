@@ -118,7 +118,7 @@ const LadingPage = () => {
               title: item.title,
               description: item.description,
               price: item.price,
-              cardClick: () => useUpdateRout("/product-detail", item.id),
+              cardClick: () => useUpdateRout("/product-detail", {data: {productId: item.id}}),
             }),
           ),
           slidesPerView: 5, // تعداد کارت در هر صفحه
@@ -149,7 +149,7 @@ const LadingPage = () => {
               title: item.title,
               description: item.description,
               price: item.price,
-              cardClick: () => useUpdateRout("/product-detail", item.id),
+              cardClick: () => useUpdateRout("/product-detail", {data: {productId: item.id}}),
             }),
           ),
           slidesPerView: 5, // تعداد کارت در هر صفحه
@@ -205,7 +205,7 @@ const LadingPage = () => {
               title: item.title,
               description: item.description,
               price: item.price,
-              cardClick: () => useUpdateRout("/product-detail", item.id),
+              cardClick: () => useUpdateRout("/product-detail", {data: {productId: item.id}}),
             }),
           ),
           slidesPerView: 5, // تعداد کارت در هر صفحه

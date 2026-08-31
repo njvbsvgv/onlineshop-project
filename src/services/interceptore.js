@@ -87,7 +87,7 @@ class httpInterceptore {
 }
 
 const requestMeddleware = (next) => {
-  const t = languageTranslation("toastMessge")
+  const t = languageTranslation("toastMessage")
   const token = getDataFromLocalStorage("onlineshopAccessToken", false)
   if (token) {
     next()

@@ -100,7 +100,18 @@ const faData = {
     navigationData: [
       { text: "صفحه اصلی", link: "/landing" },
       { text: "همه محصولات", link: "/products" },
-      { text: "اخبار", link: "/news" },
+    ],
+    themeModeData: [
+      {
+        value: "light",
+        label: "روشن ☀️",
+        badge: "☀️",
+      },
+      {
+        value: "dark",
+        label: "تاریک 🌙",
+        badge: "🌙",
+      },
     ],
     inputPlaceholder: "نام لباس برند یا...",
   },
@@ -151,11 +162,23 @@ const faData = {
       colorLabel: "رنگ ها",
       addToBasket: "افزودن به سبد خرید",
       similarProducts: "محصولات مشابه",
-      tabInputData: [
-        { text: "نظرات کاربران", className: "active" },
-        // { text: "نظرات کاربران", className: "not-active" },
-      ],
+      productInfoLabel: "توضیحات تکمیلی",
+      tabInputData: {
+        userComment: "نظرات کاربران",
+        description: "توضیحات محصول",
+      },
     },
+  },
+  cartPage: {
+    yourShopingCart: "سبد خرید شما",
+    purchaseDetails: "جزییات خرید",
+    noOrderResultMessage: "سبد خرید شما خالی هست",
+    btnText: "همین حالا سفارش دهید",
+    shippingCost: "هزینه ارسال",
+    freeShipping: "ارسال رایگان",
+    product: "محصول",
+    totalAmount: "مبلغ کل",
+    placeOrder: "ثبت سفارش",
   },
   commentFormData: {
     inputData: [
@@ -192,10 +215,22 @@ const faData = {
     },
     noResult: "کامنتی وجود ندارد",
   },
-  toastMessge: {
+  toastMessage: {
     createOrder: {
       success: "محصول به سبد خرید شما اضافه شد✅",
       worning: "این محصول در سبد خرید شما موجود میباشد",
+    },
+    comment: {
+      success: "نظر شما با موفقیت ثبت شد 😍",
+      worning: "شما قبلاً ۳ نظر ثبت کرده‌اید",
+      likeMessage: {
+        success: "نظر با موفقیت لایک شد ✅",
+        worning: "شما قبلاً این نظر را لایک کرده‌اید",
+      },
+      dislikeMessage: {
+        success: "نظر با موفقیت دیسلایک شد ✅",
+        worning: "شما قبلاً این نظر را دیسلایک کرده‌اید",
+      },
     },
     error: "لطفا ابتدا وارد حساب کاربری خود شوید🚫",
   },

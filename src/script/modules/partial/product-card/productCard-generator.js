@@ -9,6 +9,8 @@ const ProductCard = ({
   const card = document.createElement("div");
   card.className = "product-card";
 
+  console.log("cardClick ==>", cardClick)
+
   const imageControl = document.createElement("div");
   imageControl.className = "image-control";
 

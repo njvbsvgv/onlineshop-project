@@ -142,9 +142,9 @@ class AuthCardClass {
     const logoImageControl = document.createElement("div")
     logoImageControl.classList.add("logo-image-control")
 
-    const logoImageElem = document.createElement("img");
-    logoImageElem.setAttribute("src", "./src/assets/photos/logo.svg");
-    logoImageElem.classList.add("logo-image");
+    // const logoImageElem = document.createElement("img");
+    // logoImageElem.setAttribute("src", "./src/assets/photos/logo.svg");
+    // logoImageElem.classList.add("logo-image");
 
     const titleControlElem = document.createElement("div");
     titleControlElem.classList.add("title-container");
@@ -193,7 +193,7 @@ class AuthCardClass {
       RebuildWebPages();
     };
 
-    logoImageControl.appendChild(logoImageElem)
+    logoImageControl.appendChild(Logo({onClick: () => {}}))
     logoControlElem.append(
       languageSwitcherGenerator(language, changeLanguageHandler),
       logoImageControl,

@@ -3,7 +3,8 @@
     border: none;
     padding-inline: 8px;
     padding-block: 13px;
-    background: #08182A;
+    /* background: #08182A; */
+    background: var(--text-active);
     color: white;
     font-family: shabnam;
     cursor: pointer;
@@ -13,11 +14,11 @@
 
 .custom-btn-border {
     outline: none;
-    border: 1px solid #08182A;
+    border: 1px solid var(--text-active);
     padding-inline: 8px;
     padding-block: 13px;
     background: transparent;
-    color: #08182A;
+    color: var(--text-theme);
     font-family: shabnam;
     cursor: pointer;
     width: 100%;
@@ -26,6 +27,6 @@
 }
 
 .custom-btn-border:hover {
-    background: #08182A;
+    background: var(--text-active);
     color: #fff;
 }

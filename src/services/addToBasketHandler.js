@@ -14,7 +14,7 @@ const addToBasketHandler = (productId) => {
         const newData = {
           id: findData.id,
           userId,
-          basketData: [...findData.basketData, product.data],
+          basketData: [...findData.basketData, {...product.data, count: 1}],
         };
         newBasket.push(newData)
         http.update(`/onlineshopBasket/${findData.id}`, newData)
@@ -23,7 +23,7 @@ const addToBasketHandler = (productId) => {
     } else {
       const newData = {
         userId,
-        basketData: [product.data],
+        basketData: [{...product.data, count: 1}],
       };
       newBasket.push(newData)
       http.create("/onlineshopBasket", newData)

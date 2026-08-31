@@ -22,7 +22,8 @@ const colorAndSizeBox = (labelText, children) => {
 };
 
 const ProductDetailPage = () => {
-  const productId = getDataFromLocalStorage("routState", true);
+  const routState = getDataFromLocalStorage("routState", true);
+  const productId = routState.data.productId
   const http = new httpInterceptore();
   const product = http.get(`/products/${productId}`);
   const sizeList = http.get(`/sizeList`);
@@ -204,10 +205,19 @@ const ProductDetailPage = () => {
   productInformationController.append(rightItemController, leftItemController);
   // top items
 
+  const productInfoController = document.createElement("div")
+  productInfoController.setAttribute("class", "product-info-controller")
+  const productInfoLabel = document.createElement("h4")
+  productInfoLabel.textContent = t("productInfoLabel")
+  const productInfo = document.createElement("p")
+  productInfo.textContent = product.data.description
+  productInfoController.append(productInfoLabel, productInfo)
+
   const similerProduct = getSimilerProduct(product.data.category);
   container.append(
     productInformationController,
-    descriptionAndCommentBoxGenerator(),
+    descriptionAndCommentBoxGenerator(productInfoController, commentWrapper()),
+    similerProduct.length > 0 ?
     Motion(
       ProductBox({
         title: t("similarProducts"),
@@ -242,7 +252,7 @@ const ProductDetailPage = () => {
         { key: "width", style: "auto" },
         { key: "height", style: "auto" },
       ],
-    ),
+    ) : null,
   );
 
   const page = MainPageLayout(container);
