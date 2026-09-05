@@ -1,4 +1,4 @@
-import { getDataFromLocalStorage } from "../../../../hooks/local-storage/index.js";
+import { deleteDataFromLocalStorage, getDataFromLocalStorage } from "../../../../hooks/local-storage/index.js";
 import httpInterceptore from "../../../../services/interceptore.js";
 import { BtnGeneratorClass } from "../../../package/button/button-generator.js";
 import dropdownGenerator from "../../../package/dropDown-generator/dropDown-generator.js";
@@ -81,15 +81,7 @@ const PageHeader = () => {
 
   const bottomItemRight = document.createElement("div");
   bottomItemRight.className = "right-item";
-  // console.log(t("navigationData"))
   bottomItemRight.appendChild(NavigationPage(t("navigationData")));
-
-  // const basketIcon = document.createElement("img");
-  // basketIcon.src = "./src/assets/icons/menu-icon.svg";
-  // basketIcon.className = "basket-icon";
-  // basketIcon.addEventListener("click", () =>
-  //   useUpdateRout("/cart", { check: true }),
-  // );
 
   const bottomItemLeft = document.createElement("div");
   bottomItemLeft.className = "left-item";
@@ -98,10 +90,6 @@ const PageHeader = () => {
   const language = getDataFromLocalStorage("language");
   const changeLanguageHandler = (locale) => {
     updateLanguage(locale);
-    // if (locale == "fa") {
-    // } else {
-    //   updateLanguage("en");
-    // }
     RebuildWebPages();
   };
 

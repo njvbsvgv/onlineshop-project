@@ -1,7 +1,3 @@
-// import { SignInPage } from "./pages/auth/SignInPage.js";
-// import { LadingPage } from "./pages/main/landing/landing-page.js";
-// import { ProductPage } from "./pages/main/product/ProductPage.js";
-
 import { useDataBaseGeneratorToLocalStorage } from "../hooks/dataBase-generator.js";
 import { CreateWebPages } from "./modules/partial/create-web-page.js";
 import { getPathName } from "./modules/partial/use-update-route.js";
@@ -17,10 +13,6 @@ import ProductPage from "./pages/main/product/ProductPage.js";
 metaDataGenerator("auth-sign-in");
 
 document.addEventListener("DOMContentLoaded", () => {
-  // let pathName = window.location.pathname
-  // console.log("pathName ==>", pathName)
-  const pathName = getPathName()
-  console.log("pathName ==>", pathName)
   useDataBaseGeneratorToLocalStorage();
   CreateWebPages([
     { path: "/auth/sign-in", element: () => SignInPage(), check: false },
