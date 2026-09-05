@@ -1,4 +1,4 @@
-const faData = {
+export const faData = {
   auth: {
     login: {
       title: "ورود به حساب کاربری",

@@ -106,6 +106,7 @@ class CartCardGenerator {
   }
 }
 
+export default CartCardGenerator
 // const CartCard = (
 //   image,
 //   title,

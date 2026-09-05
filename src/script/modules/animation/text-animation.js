@@ -1,4 +1,4 @@
-const textAnimation = (text, time, delay, handler) => {
+export const textAnimation = (text, time, delay, handler) => {
   let index = -1;
   let newText = "";
   setTimeout(() => {

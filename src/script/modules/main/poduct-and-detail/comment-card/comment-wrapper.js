@@ -1,3 +1,11 @@
+import extractFormData from "../../../../../hooks/form-data/extractFormData.js";
+import { createCommentHandler, dislikeHandler, getCommentListHandler, likeHandler } from "../../../../../services/comment-api.js";
+import httpInterceptore from "../../../../../services/interceptore.js";
+import { languageTranslation } from "../../../../package/language-translation-module/languageTranslation.js";
+import { Motion } from "../../../animation/motion.js";
+import commentCardGenerator from "./comment-card.js";
+import commentForm from "./comment-form.js";
+
 const commentWrapper = () => {
   const t = languageTranslation("commentFormData");
   const http = new httpInterceptore();
@@ -146,3 +154,6 @@ const commentWrapper = () => {
   );
   return wrapper;
 };
+
+
+export default commentWrapper

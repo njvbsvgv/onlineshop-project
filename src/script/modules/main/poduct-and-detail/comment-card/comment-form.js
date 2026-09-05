@@ -1,3 +1,8 @@
+import { buttonGenerator } from "../../../../package/button/button-generator.js";
+import formGenerator from "../../../../package/form/form-generator.js";
+import inputGenerator from "../../../../package/input/input-generator.js";
+import { languageTranslation } from "../../../../package/language-translation-module/languageTranslation.js";
+
 const commentForm = (cubmitClick) => {
   const t = languageTranslation("commentFormData");
   const wrapper = document.createElement("div");
@@ -20,3 +25,5 @@ const commentForm = (cubmitClick) => {
 
   return wrapper;
 };
+
+export default commentForm

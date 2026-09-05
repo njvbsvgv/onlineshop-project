@@ -9,7 +9,7 @@ const ProductCard = ({
   const card = document.createElement("div");
   card.className = "product-card";
 
-  console.log("cardClick ==>", cardClick)
+  // console.log("cardClick ==>", cardClick)
 
   const imageControl = document.createElement("div");
   imageControl.className = "image-control";
@@ -64,3 +64,5 @@ const ProductCard = ({
   card.append(imageControl, titleElem, descriptionElem, bottomItemControl);
   return card;
 };
+
+export default ProductCard

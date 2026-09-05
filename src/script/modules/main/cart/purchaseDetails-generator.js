@@ -1,3 +1,6 @@
+import { buttonGenerator } from "../../../package/button/button-generator.js";
+import { languageTranslation } from "../../../package/language-translation-module/languageTranslation.js";
+
 class purchaseDetailsGenerator {
   click = () => {};
 
@@ -52,3 +55,5 @@ class purchaseDetailsGenerator {
     return container;
   }
 }
+
+export default purchaseDetailsGenerator

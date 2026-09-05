@@ -30,3 +30,5 @@ const LandingImageCardSection = (imageAddress, text, customStyle) => {
   card.append(image, span);
   return card;
 };
+
+export default LandingImageCardSection

@@ -1,3 +1,5 @@
+import { languageTranslation } from "../../../package/language-translation-module/languageTranslation.js";
+
 const ProductBox = ({ title, children }) => {
   const t = languageTranslation("landing")
   // console.log("children ==>", children);
@@ -50,3 +52,5 @@ const ProductBox = ({ title, children }) => {
 
   return container;
 };
+
+export default ProductBox

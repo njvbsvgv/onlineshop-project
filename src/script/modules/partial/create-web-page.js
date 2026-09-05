@@ -10,6 +10,8 @@
 //     },
 //   };
 
+import { getPathName } from "./use-update-route.js";
+
 //   webPages.authPages.signInPage.appendChild(SignInPage());
 
 //   webPages.authPages.signUpPage.appendChild(SignUpPage());
@@ -17,13 +19,15 @@
 
 let currentRoutData = [];
 
-const CreateWebPages = (routData) => {
+export const CreateWebPages = (routData) => {
   currentRoutData = routData;
   RebuildWebPages();
 };
 
-const RebuildWebPages = () => {
-  let pathName = localStorage.getItem("routName");
+export const RebuildWebPages = () => {
+  // let pathName = localStorage.getItem("routName");
+  let pathName = getPathName()
+  console.log("pathName ==>", pathName)
   const language = localStorage.getItem("language");
   const rootElement = document.getElementById("root");
 
@@ -48,7 +52,7 @@ const RebuildWebPages = () => {
     // }
     // pathName = localStorage.getItem("routName");
     // console.log("pathName ==>", pathName)
-    if (item.path.includes(pathName)) {
+    if (item.path == pathName) {
       const element = item.element();
       rootElement.append(element);
     }

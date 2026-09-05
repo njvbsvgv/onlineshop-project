@@ -1,3 +1,18 @@
+import extractFormData from "../../../hooks/form-data/extractFormData.js";
+import { setDataToLocalStorage } from "../../../hooks/local-storage/index.js";
+import tokenGenerator from "../../../hooks/token/token-generator.js";
+import httpInterceptore from "../../../services/interceptore.js";
+import { Motion } from "../../modules/animation/motion.js";
+import AuthCardClass from "../../modules/auth/auth-card-generator.js";
+import { useUpdateRout } from "../../modules/partial/use-update-route.js";
+import { buttonGenerator } from "../../package/button/button-generator.js";
+import formGenerator from "../../package/form/form-generator.js";
+import inputGenerator from "../../package/input/input-generator.js";
+import { languageTranslation } from "../../package/language-translation-module/languageTranslation.js";
+import { metaDataGenerator } from "../../package/metadata/metadata-generator.js";
+import { toast } from "../../package/tooaster/toaster.js";
+import AuthPageContaienr from "./AuthPageContaienr.js";
+
 const SignUpPage = () => {
   const gotoSignInPage = () => {
     useUpdateRout("/auth/sign-in");
@@ -53,3 +68,5 @@ const SignUpPage = () => {
     ]),
   );
 };
+
+export default SignUpPage

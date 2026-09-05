@@ -11,3 +11,5 @@ const extractFormData = (formTarget, lengthNum) => {
   }
   return newData
 };
+
+export default extractFormData

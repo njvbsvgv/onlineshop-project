@@ -83,3 +83,5 @@ class commentCardGenerator {
     return cardWrapper;
   }
 }
+
+export default commentCardGenerator

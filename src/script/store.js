@@ -1,6 +1,6 @@
-let createPageFlag = true;
+export let createPageFlag = true;
 
-const signinInputData = [
+export const signinInputData = [
   {
     label: "شماره تماس",
     type: "text",
@@ -17,7 +17,7 @@ const signinInputData = [
   },
 ];
 
-const signUpInputData = [
+export const signUpInputData = [
   {
     label: "شماره تماس",
     type: "text",
@@ -72,7 +72,7 @@ const signUpInputData = [
 //   },
 // ];
 
-const sizeList = [
+export const sizeList = [
   {id: 1, name: "XL"},
   {id: 2, name: "L"},
   {id: 3, name: "M"},
@@ -80,7 +80,7 @@ const sizeList = [
   {id: 5, name: "XS"},
 ]
 
-const colorList = [
+export const colorList = [
   {id: 1, name: "آبی"},
   {id: 2, name: "سبز"},
   {id: 3, name: "سرمه ای"},
@@ -88,7 +88,7 @@ const colorList = [
   {id: 5, name: "مشکی"},
 ]
 
-const products = [
+export const products = [
   {
     id: 1,
     image:
@@ -343,7 +343,7 @@ const products = [
   },
 ];
 
-const categoryData = [
+export const categoryData = [
   { id: 1, text: "دورس" },
   { id: 2, text: "لباس زیر" },
   { id: 3, text: "شلوار جین" },
@@ -359,7 +359,7 @@ const categoryData = [
   { id: 13, text: "تیشرت" },
 ];
 
-const brandData = [
+export const brandData = [
   { id: 1, text: "باینت" },
   { id: 2, text: "ایزی دو" },
   { id: 3, text: "کروم" },

@@ -1,3 +1,12 @@
+import { deleteOrder, getOrderDataHandler, minusOrderCounter, plusOrderConter } from "../../../../services/cart-api.js";
+import CartCardGenerator from "../../../modules/main/cart/CartCard.js";
+import purchaseDetailsGenerator from "../../../modules/main/cart/purchaseDetails-generator.js";
+import { useUpdateRout } from "../../../modules/partial/use-update-route.js";
+import { buttonGenerator } from "../../../package/button/button-generator.js";
+import { languageTranslation } from "../../../package/language-translation-module/languageTranslation.js";
+import { metaDataGenerator } from "../../../package/metadata/metadata-generator.js";
+import MainPageLayout from "../main-page-layout.js";
+
 const CartPage = () => {
   let orderData = getOrderDataHandler();
   console.log("orderData ==>", orderData);
@@ -33,7 +42,7 @@ const CartPage = () => {
   noResult.textContent = t("noOrderResultMessage");
 
   let finalePrice = 0
-  orderData.forEach((item) => {
+  orderData?.forEach((item) => {
     console.log("item ==>", item)
     finalePrice += item.price
   })
@@ -45,7 +54,7 @@ const CartPage = () => {
       orderData = getOrderDataHandler();
       orderData.forEach((item) => finalePrice += item.price)
       leftBox.innerHTML = ""
-      leftBox.appendChild(purchaseDetailsGeneration.generator(orderData.length, finalePrice))
+      leftBox.appendChild(purchaseDetailsGeneration.generator(orderData?.length, finalePrice))
       cardController.innerHTML = "";
       if (orderData && orderData.length > 0) {
         orderData.forEach((item) => {
@@ -75,7 +84,7 @@ const CartPage = () => {
       orderData = getOrderDataHandler();
       orderData.forEach((item) => finalePrice += item.price)
       leftBox.innerHTML = ""
-      leftBox.appendChild(purchaseDetailsGeneration.generator(orderData.length, finalePrice))
+      leftBox.appendChild(purchaseDetailsGeneration.generator(orderData?.length, finalePrice))
       cardController.innerHTML = "";
       if (orderData && orderData.length > 0) {
         orderData.forEach((item) => {
@@ -161,10 +170,13 @@ const CartPage = () => {
   rightItem.append(rightItemTitle, cardController);
 
   
-  leftBox.appendChild(purchaseDetailsGeneration.generator(orderData.length, finalePrice))
+  leftBox.appendChild(purchaseDetailsGeneration.generator(orderData?.length, finalePrice))
   leftItem.append(leftItemTitle, leftBox);
 
   topItemController.append(rightItem, leftItem);
   container.append(topItemController);
   return MainPageLayout(container);
 };
+
+
+export default CartPage

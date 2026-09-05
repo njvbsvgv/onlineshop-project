@@ -1,3 +1,6 @@
+import PageFooter from "../../modules/main/page-footer/page-footer.js"
+import PageHeader from "../../modules/main/page-header/page-header.js"
+
 const MainPageLayout = (children) => {
     const holderContainer = document.createElement("div")
     holderContainer.className = "pages-holder-container"
@@ -14,3 +17,5 @@ const MainPageLayout = (children) => {
     holderContainer.append(PageHeader(), holder, PageFooter())
     return holderContainer
 }
+
+export default MainPageLayout

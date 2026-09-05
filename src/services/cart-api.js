@@ -1,12 +1,16 @@
-const getOrderDataHandler = () => {
+import { getDataFromLocalStorage } from "../hooks/local-storage/index.js";
+import httpInterceptore from "./interceptore.js";
+
+export const getOrderDataHandler = () => {
   const userId = getDataFromLocalStorage("onlineshopUserId", true);
   const http = new httpInterceptore();
   const orderData = http.get("/onlineshopBasket");
   const findUserOrder = orderData.data.find((el) => el.userId == userId);
+  // console.log("findUserOrder ==>", findUserOrder)
   return findUserOrder?.basketData;
 };
 
-const deleteOrder = (id) => {
+export const deleteOrder = (id) => {
   const userId = getDataFromLocalStorage("onlineshopUserId", true);
   const http = new httpInterceptore();
   const orderData = http.get("/onlineshopBasket");
@@ -25,7 +29,7 @@ const deleteOrder = (id) => {
 };
 
 
-const plusOrderConter = (id) => {
+export const plusOrderConter = (id) => {
   const userId = getDataFromLocalStorage("onlineshopUserId", true);
   const http = new httpInterceptore();
   const orderData = http.get("/onlineshopBasket");
@@ -42,7 +46,7 @@ const plusOrderConter = (id) => {
   http.update(`/onlineshopBasket/${findUserOrder.id}`, findUserOrder);
 }
 
-const minusOrderCounter = (id) => {
+export const minusOrderCounter = (id) => {
   const userId = getDataFromLocalStorage("onlineshopUserId", true);
   const http = new httpInterceptore();
   const orderData = http.get("/onlineshopBasket");

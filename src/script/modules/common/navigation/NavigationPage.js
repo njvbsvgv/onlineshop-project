@@ -1,8 +1,11 @@
+import { getPathName, useUpdateRout } from "../../partial/use-update-route.js";
+
 const NavigationPage = (data) => {
   const navigationContainer = document.createElement("div");
   navigationContainer.className = "navigation-container";
 
-  const routName = getDataFromLocalStorage("routName", false);
+  // const routName = getDataFromLocalStorage("routName", false);
+  const routName = getPathName()
 
   data.forEach((item) => {
     const navigationText = document.createElement("span");
@@ -18,3 +21,6 @@ const NavigationPage = (data) => {
   });
   return navigationContainer;
 };
+
+
+export default NavigationPage

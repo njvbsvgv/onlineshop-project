@@ -31,3 +31,5 @@ const FilterBoxGenerator = (filterData, inputType="checkbox", boxType, select, l
     boxContainer.append(topItem, bottomItem)
     return boxContainer
 }
+
+export default FilterBoxGenerator

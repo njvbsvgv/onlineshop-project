@@ -1,3 +1,7 @@
+import { languageTranslation } from "../../../../package/language-translation-module/languageTranslation.js";
+import { Motion } from "../../../animation/motion.js";
+import descriptionAndCommentBoxTitleGenerator from "./title-generator.js";
+
 const descriptionAndCommentBoxGenerator = (description, comment) => {
   const t = languageTranslation("productPage.detail");
   const container = document.createElement("div");
@@ -53,3 +57,5 @@ const descriptionAndCommentBoxGenerator = (description, comment) => {
   );
   return container;
 };
+
+export default descriptionAndCommentBoxGenerator

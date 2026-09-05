@@ -1,4 +1,10 @@
-const getCommentListHandler = () => {
+import { getDataFromLocalStorage } from "../hooks/local-storage/index.js";
+import { languageTranslation } from "../script/package/language-translation-module/languageTranslation.js";
+import { toast } from "../script/package/tooaster/toaster.js";
+import httpInterceptore from "./interceptore.js";
+import { requestMeddleware } from "./middleware.js";
+
+export const getCommentListHandler = () => {
   const http = new httpInterceptore();
   let commentData = http.get("/commentList");
   const productId = getDataFromLocalStorage("routState", true).data.productId;
@@ -8,7 +14,7 @@ const getCommentListHandler = () => {
   return findProductCommentList;
 };
 
-const createCommentHandler = (data) => {
+export const createCommentHandler = (data) => {
   const http = new httpInterceptore();
   const t = languageTranslation("toastMessage.comment")
   let success = false;
@@ -42,7 +48,7 @@ const createCommentHandler = (data) => {
   return success;
 };
 
-const findCommentHandler = (db, commentId, productId) => {
+export const findCommentHandler = (db, commentId, productId) => {
   const http = new httpInterceptore();
   const likeData = http.get(`/${db}`);
   const findComment = likeData.data.find(
@@ -51,7 +57,7 @@ const findCommentHandler = (db, commentId, productId) => {
   return findComment;
 };
 
-const updateLikeOrDislikeCount = (varient, commentId, count) => {
+export const updateLikeOrDislikeCount = (varient, commentId, count) => {
   const http = new httpInterceptore();
   let db = http.get(`/commentList/${commentId}`).data;
   let newData = { ...db };
@@ -72,7 +78,7 @@ const updateLikeOrDislikeCount = (varient, commentId, count) => {
   http.update(`/commentList/${commentId}`, newData);
 };
 
-const likeHandler = (commentId) => {
+export const likeHandler = (commentId) => {
   const http = new httpInterceptore();
   let success = false;
   const t = languageTranslation("toastMessage.comment.likeMessage")
@@ -111,7 +117,7 @@ const likeHandler = (commentId) => {
   return success;
 };
 
-const dislikeHandler = (commentId) => {
+export const dislikeHandler = (commentId) => {
   const http = new httpInterceptore();
   let success = false;
   const t = languageTranslation("toastMessage.comment.dislikeMessage")

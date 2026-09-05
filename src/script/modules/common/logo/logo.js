@@ -27,3 +27,5 @@ const Logo = ({ onClick }) => {
   }
   return logo;
 };
+
+export default Logo

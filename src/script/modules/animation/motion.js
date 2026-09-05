@@ -1,4 +1,4 @@
-const Motion = (children, delay, customStyles) => {
+export const Motion = (children, delay, customStyles) => {
   const motionContainer = document.createElement("div");
   motionContainer.appendChild(children);
 

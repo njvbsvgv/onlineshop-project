@@ -1,4 +1,15 @@
-const LadingPage = () => {
+import { getProductListByStatus } from "../../../../services/product-api.js";
+import { Motion } from "../../../modules/animation/motion.js";
+import LandingImageCardSection from "../../../modules/main/landing/image-card-section/landing-imageCard-section.js";
+import ProductBox from "../../../modules/partial/product-box/product-box.js";
+import ProductCard from "../../../modules/partial/product-card/productCard-generator.js";
+import { languageTranslation } from "../../../package/language-translation-module/languageTranslation.js";
+import { metaDataGenerator } from "../../../package/metadata/metadata-generator.js";
+import modernSlider from "../../../package/modern-slider/modernSlider.js";
+import sliderGenerator from "../../../package/slider/slider-generator.js";
+import MainPageLayout from "../main-page-layout.js";
+
+const LandingPage = () => {
   const t = languageTranslation("landing");
 
   metaDataGenerator("landing");
@@ -105,9 +116,9 @@ const LadingPage = () => {
     ),
   );
 
-  const product = products.filter((el) => el.status.includes("پرفروش ترین"));
-  const newProduct = products.filter((el) => el.status.includes("جدیدترین"));
-  console.log("product ==>", product);
+  const product = getProductListByStatus("پرفروش ترین")
+  const newProduct = getProductListByStatus("جدیدترین")
+  // console.log("product ==>", product);
 
   productOneSectionControl.appendChild(
     ProductBox({
@@ -233,3 +244,6 @@ const LadingPage = () => {
   );
   return MainPageLayout(container);
 };
+
+
+export default LandingPage

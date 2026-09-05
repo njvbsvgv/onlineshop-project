@@ -1,16 +1,6 @@
-const ToastProvider = () => {
-  const continer = document.createElement("div");
-  continer.setAttribute("class", "toast-container-elem");
-  continer.setAttribute("id", "toasterContainer");
-  // const messageElem = document.createElement("span")
-  // const removeElem = document.createElement("img")
-  // removeElem.setAttribute("class", "toast-remove-elem")
-  // removeElem.setAttribute("src", "./src/assets/icons/close-fill.svg")
-};
-
 let topPosition = 10
 
-const toast = () => {
+export const toast = () => {
 //   const holder = document.getElementById("toasterContainer");
   const btn = document.createElement("button");
   btn.setAttribute("class", "toasetr-btn-elem");

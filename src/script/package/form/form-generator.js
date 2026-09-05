@@ -23,3 +23,5 @@ const formGenerator = ({ inputChildren, buttonChildren, submitHandler }) => {
 
   return formElem;
 };
+
+export default formGenerator

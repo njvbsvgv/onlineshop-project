@@ -54,3 +54,5 @@ const modernSlider = (photosData, key, btnRightIcon, btnLeftIcon) => {
 
     return sliderContainer
 }
+
+export default modernSlider

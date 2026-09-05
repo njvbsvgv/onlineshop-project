@@ -9,3 +9,5 @@ const clearFormData = (formTarget, lengthNum) => {
     }
   }
 };
+
+export default clearFormData

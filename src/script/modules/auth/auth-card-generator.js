@@ -11,6 +11,12 @@
 //   const cardContainer = document.createElement("div");
 //   cardContainer.classList.add("auth-layout-card");
 
+import { getDataFromLocalStorage } from "../../../hooks/local-storage/index.js";
+import languageSwitcherGenerator from "../../package/language-switcher/languageSwitcher-generator.js";
+import { updateLanguage } from "../../package/language-translation-module/languageTranslation.js";
+import Logo from "../common/logo/logo.js";
+import { RebuildWebPages } from "../partial/create-web-page.js";
+
 //   const logoControlElem = document.createElement("div");
 //   logoControlElem.classList.add("logo-control");
 
@@ -185,11 +191,11 @@ class AuthCardClass {
 
     const language = getDataFromLocalStorage("language");
     const changeLanguageHandler = (locale) => {
-      if (locale == "fa") {
-        updateLanguage("fa");
-      } else {
-        updateLanguage("en");
-      }
+      updateLanguage(locale);
+      // if (locale == "fa") {
+      // } else {
+      //   updateLanguage("en");
+      // }
       RebuildWebPages();
     };
 
@@ -222,3 +228,5 @@ class AuthCardClass {
     }
   }
 }
+
+export default AuthCardClass

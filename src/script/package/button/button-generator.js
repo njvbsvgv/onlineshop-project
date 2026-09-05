@@ -1,4 +1,4 @@
-const buttonGenerator = (text, type, name, styleType, onClick, icon) => {
+export const buttonGenerator = (text, type, name, styleType, onClick, icon) => {
   const customBtn = document.createElement("button");
   if (onClick) {
     customBtn.addEventListener("click", () => {
@@ -15,7 +15,7 @@ const buttonGenerator = (text, type, name, styleType, onClick, icon) => {
   }
   customBtn.setAttribute("type", type);
   customBtn.setAttribute("name", name);
-  console.log("icon ==>", icon);
+  // console.log("icon ==>", icon);
   if (icon) {
     const iconElme = document.createElement("img");
     iconElme.setAttribute("src", icon);
@@ -25,7 +25,7 @@ const buttonGenerator = (text, type, name, styleType, onClick, icon) => {
   return customBtn;
 };
 
-class BtnGeneratorClass {
+export class BtnGeneratorClass {
   click = null;
 
   constructor(clickHandler) {
@@ -51,7 +51,7 @@ class BtnGeneratorClass {
     }
     customBtn.setAttribute("type", type);
     customBtn.setAttribute("name", name);
-    console.log("icon ==>", icon);
+    // console.log("icon ==>", icon);
     if (icon) {
       const iconElme = document.createElement("img");
       iconElme.setAttribute("src", icon);

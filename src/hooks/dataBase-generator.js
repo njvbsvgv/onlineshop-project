@@ -1,5 +1,13 @@
-const useDataBaseGeneratorToLocalStorage = () => {
+export const useDataBaseGeneratorToLocalStorage = () => {
   const data = JSON.parse(localStorage.getItem("dataBase"));
+  const language = localStorage.getItem("language")
+  const routName = localStorage.getItem("routName")
+  if (!language) {
+    updateLanguage("fa");
+  }
+  if (!routName) {
+    useUpdateRout("/landing")
+  }
   if (!data) {
     setDataToLocalStorage(
       "dataBase",
@@ -314,21 +322,4 @@ const useDataBaseGeneratorToLocalStorage = () => {
       true,
     );
   }
-  // const dataBase = {
-  //   userLists: [],
-  //   productList: productListData,
-  //   filters: {
-  //     categories: [],
-  //     brand: [],
-  //     size: [],
-  //   },
-  //   productComment: [],
-  //   basket: [],
-  // };
-
-  // const newDataBase = JSON.parse(localStorage.getItem("onlineShopDataBase"));
-
-  // if (!newDataBase) {
-  //   localStorage.setItem("onlineShopDataBase", JSON.stringify(dataBase));
-  // }
 };

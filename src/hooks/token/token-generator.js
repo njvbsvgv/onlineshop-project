@@ -52,3 +52,5 @@ const tokenGenerator = () => {
   return token;
   console.log("token ==>", token);
 };
+
+export default tokenGenerator

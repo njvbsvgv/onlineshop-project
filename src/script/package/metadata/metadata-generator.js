@@ -1,3 +1,3 @@
-const metaDataGenerator = (title) => {
+export const metaDataGenerator = (title) => {
   document.title = title;
 };

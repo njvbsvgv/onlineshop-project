@@ -1,3 +1,20 @@
+import { getDataFromLocalStorage } from "../../../../../hooks/local-storage/index.js";
+import { addToBasketHandler } from "../../../../../services/addToBasketHandler.js";
+import httpInterceptore from "../../../../../services/interceptore.js";
+import { getSimilerProduct } from "../../../../../services/product-api.js";
+import { Motion } from "../../../../modules/animation/motion.js";
+import commentWrapper from "../../../../modules/main/poduct-and-detail/comment-card/comment-wrapper.js";
+import descriptionAndCommentBoxGenerator from "../../../../modules/main/poduct-and-detail/description-comment-bx/descriptionAndCommentBox-generator.js";
+import ProductBox from "../../../../modules/partial/product-box/product-box.js";
+import ProductCard from "../../../../modules/partial/product-card/productCard-generator.js";
+import { useUpdateRout } from "../../../../modules/partial/use-update-route.js";
+import { buttonGenerator } from "../../../../package/button/button-generator.js";
+import { languageTranslation } from "../../../../package/language-translation-module/languageTranslation.js";
+import { metaDataGenerator } from "../../../../package/metadata/metadata-generator.js";
+import sliderGenerator from "../../../../package/slider/slider-generator.js";
+import statusBtnGenerator from "../../../../package/status-btn/status-btn-generator.js";
+import MainPageLayout from "../../main-page-layout.js";
+
 const colorAndSizeBox = (labelText, children) => {
   const container = document.createElement("div");
   container.setAttribute("class", "size-section-controller");
@@ -260,3 +277,6 @@ const ProductDetailPage = () => {
   const page = MainPageLayout(container);
   return page;
 };
+
+
+export default ProductDetailPage

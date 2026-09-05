@@ -1,15 +1,3 @@
-/**
- * Creates a filter + pagination + search system for the products page.
- *
- * @param {Array}       productsData        - Full list of products from store.js
- * @param {HTMLElement} cardController      - The container that holds product cards
- * @param {Function}    renderItem          - Callback that receives each product item
- * @param {HTMLElement} paginationContainer - The container that holds pagination buttons
- * @param {HTMLElement} searchInput         - The search input element
- * @param {number}      [itemsPerPage=6]    - How many cards to show per page
- * @returns {{ init: Function, reset: Function }}
- */
-
 const ProductFilterPagination = ({
   productsData,
   cardController,
@@ -160,3 +148,6 @@ const ProductFilterPagination = ({
 
   return { init, reset };
 };
+
+
+export default ProductFilterPagination

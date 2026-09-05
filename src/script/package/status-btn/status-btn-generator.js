@@ -7,3 +7,5 @@ const statusBtnGenerator = (text, customStyle, key) => {
   btn.textContent = text;
   return btn;
 };
+
+export default statusBtnGenerator

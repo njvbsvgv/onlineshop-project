@@ -1,4 +1,4 @@
-const enData = {
+export const enData = {
   auth: {
     login: {
       title: "Login to your account",

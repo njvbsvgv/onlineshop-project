@@ -122,3 +122,6 @@ const inputGenerator = (inputDataArray, inputWidth, inputChange) => {
 
   return divControl;
 };
+
+
+export default inputGenerator

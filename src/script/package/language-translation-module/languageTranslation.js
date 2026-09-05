@@ -1,4 +1,6 @@
-const languageTranslation = (name) => {
+import { allLanguage } from "./languages/allLanguage.js";
+
+export const languageTranslation = (name) => {
   const language = localStorage.getItem("language");
   const rootTranslation = allLanguage[language];
 
@@ -20,11 +22,11 @@ const languageTranslation = (name) => {
   return handler;
 };
 
-const createLanguage = (language) => {
+export const createLanguage = (language) => {
   localStorage.setItem("language", language);
 };
 
-const updateLanguage = (language) => {
+export const updateLanguage = (language) => {
   if (language == "fa") {
     document.body.dir = "rtl"
   }else {

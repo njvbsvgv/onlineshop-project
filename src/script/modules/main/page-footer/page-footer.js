@@ -1,3 +1,5 @@
+import { languageTranslation } from "../../../package/language-translation-module/languageTranslation.js";
+
 const PageFooter = () => {
   const itemsController = (children) => {
     const controller = document.createElement("div");
@@ -94,3 +96,6 @@ const PageFooter = () => {
   container.append(topItemControl, bottomItemControl);
   return container;
 };
+
+
+export default PageFooter

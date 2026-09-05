@@ -1,3 +1,15 @@
+import { getProductList } from "../../../../services/product-api.js";
+import { Motion } from "../../../modules/animation/motion.js";
+import ProductCard from "../../../modules/partial/product-card/productCard-generator.js";
+import { useUpdateRout } from "../../../modules/partial/use-update-route.js";
+import FilterBoxGenerator from "../../../package/filter-box/filter-box-generator.js";
+import inputGenerator from "../../../package/input/input-generator.js";
+import { languageTranslation } from "../../../package/language-translation-module/languageTranslation.js";
+import { metaDataGenerator } from "../../../package/metadata/metadata-generator.js";
+import ProductFilterPagination from "../../../package/product-filter-pagination/product-filter-pagination.js";
+import { brandData, categoryData } from "../../../store.js";
+import MainPageLayout from "../main-page-layout.js";
+
 const ProductPage = () => {
   const t = languageTranslation("productPage");
   metaDataGenerator("products");
@@ -55,12 +67,14 @@ const ProductPage = () => {
   const page = MainPageLayout(container);
   const searchInputEl = sortItem.querySelector("input");
 
+  const products = getProductList()
+
   setTimeout(() => {
     const filterPagination = ProductFilterPagination({
       productsData: products,
       cardController,
       renderItem: (item, list) => {
-        console.log("list ==>", list);
+        // console.log("list ==>", list);
         listResultItem.textContent = `${list ? list : 0} ${t("listResult")}`;
         if (list > 0) {
           cardController.appendChild(
@@ -94,3 +108,6 @@ const ProductPage = () => {
 
   return page;
 };
+
+
+export default ProductPage

@@ -1,19 +1,4 @@
-/**
- * languageSwitcherGenerator
- *
- * روی dropdownGenerator ساخته شده.
- * فقط ظاهر اختصاصی آیتم‌ها (badge + check) رو تعریف می‌کنه —
- * بقیه رفتارها (open/close، label، chevron، outside click) رو
- * dropdownGenerator مدیریت می‌کنه.
- *
- * @param {string}   locale       - زبان فعلی: 'fa' | 'en'
- * @param {Function} clickHandler - callback تغییر زبان: (locale) => {}
- *
- * @returns {HTMLElement} wrapper — با متدهای:
- *   .getLocale()
- *   .setLocale(locale)
- *   .open() / .close() / .toggle()
- */
+import dropdownGenerator from "../dropDown-generator/dropDown-generator.js";
 
 const languages = [
   { value: "fa", label: "فارسی", badge: "فا", select: "fa" },
@@ -46,3 +31,6 @@ const languageSwitcherGenerator = (locale, clickHandler) => {
 
   return dropdown;
 };
+
+
+export default languageSwitcherGenerator

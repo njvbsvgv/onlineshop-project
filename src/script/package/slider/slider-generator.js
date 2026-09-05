@@ -253,3 +253,5 @@ const sliderGenerator = ({
 
   return outerWrapper;
 };
+
+export default sliderGenerator

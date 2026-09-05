@@ -1,3 +1,7 @@
+// import { getDataFromLocalStorage } from "../hooks/local-storage.js";
+// import { languageTranslation } from "../script/package/language-translation-module/languageTranslation.js";
+// import { toast } from "../script/package/tooaster/toaster.js";
+
 class httpInterceptore {
   baseUrl = "dataBase";
   dataBase = JSON.parse(localStorage.getItem("dataBase"));
@@ -86,13 +90,4 @@ class httpInterceptore {
   }
 }
 
-const requestMeddleware = (next) => {
-  const t = languageTranslation("toastMessage")
-  const token = getDataFromLocalStorage("onlineshopAccessToken", false)
-  if (token) {
-    next()
-  }else {
-    console.log(t("error"))
-    toast().error(t("error"))
-  }
-}
+export default httpInterceptore

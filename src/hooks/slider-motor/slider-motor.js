@@ -40,3 +40,5 @@ const sliderMotor = (btnLeft, btnRight, holder, pos, posNum, itemsLength, styleC
   });
   // return resultPos
 };
+
+export default sliderMotor

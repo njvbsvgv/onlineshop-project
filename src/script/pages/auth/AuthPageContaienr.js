@@ -5,3 +5,5 @@ const AuthPageContaienr = (children) => {
     container.appendChild(children)
     return container
 }
+
+export default AuthPageContaienr

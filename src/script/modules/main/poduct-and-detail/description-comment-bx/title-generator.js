@@ -22,3 +22,5 @@ class descriptionAndCommentBoxTitleGenerator {
     return container;
   }
 }
+
+export default descriptionAndCommentBoxTitleGenerator

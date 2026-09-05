@@ -1,4 +1,9 @@
-const addToBasketHandler = (productId) => {
+import { getDataFromLocalStorage } from "../hooks/local-storage/index.js";
+import { toast } from "../script/package/tooaster/toaster.js";
+import httpInterceptore from "./interceptore.js";
+import { requestMeddleware } from "./middleware.js";
+
+export const addToBasketHandler = (productId) => {
   requestMeddleware(() => {
     const userId = getDataFromLocalStorage("onlineshopUserId", true);
     const http = new httpInterceptore();

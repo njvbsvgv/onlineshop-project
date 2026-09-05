@@ -1,3 +1,16 @@
+import { getDataFromLocalStorage } from "../../../../hooks/local-storage/index.js";
+import httpInterceptore from "../../../../services/interceptore.js";
+import { BtnGeneratorClass } from "../../../package/button/button-generator.js";
+import dropdownGenerator from "../../../package/dropDown-generator/dropDown-generator.js";
+import inputGenerator from "../../../package/input/input-generator.js";
+import languageSwitcherGenerator from "../../../package/language-switcher/languageSwitcher-generator.js";
+import { languageTranslation, updateLanguage } from "../../../package/language-translation-module/languageTranslation.js";
+import { toggleTheme } from "../../../package/toggleTheme-generator/toggleTheme-generator.js";
+import Logo from "../../common/logo/logo.js";
+import NavigationPage from "../../common/navigation/NavigationPage.js";
+import { RebuildWebPages } from "../../partial/create-web-page.js";
+import { useUpdateRout } from "../../partial/use-update-route.js";
+
 const bastekIcon = (clickHandelr) => {
   const basketIcon = document.createElement("span");
   basketIcon.innerHTML = `
@@ -68,6 +81,7 @@ const PageHeader = () => {
 
   const bottomItemRight = document.createElement("div");
   bottomItemRight.className = "right-item";
+  // console.log(t("navigationData"))
   bottomItemRight.appendChild(NavigationPage(t("navigationData")));
 
   // const basketIcon = document.createElement("img");
@@ -83,11 +97,11 @@ const PageHeader = () => {
 
   const language = getDataFromLocalStorage("language");
   const changeLanguageHandler = (locale) => {
-    if (locale == "fa") {
-      updateLanguage("fa");
-    } else {
-      updateLanguage("en");
-    }
+    updateLanguage(locale);
+    // if (locale == "fa") {
+    // } else {
+    //   updateLanguage("en");
+    // }
     RebuildWebPages();
   };
 
@@ -185,3 +199,6 @@ const PageHeader = () => {
   headerContainer.append(itemsControl);
   return headerContainer;
 };
+
+
+export default PageHeader

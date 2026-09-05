@@ -1,37 +1,3 @@
-/**
- * dropdownGenerator
- *
- *
- * @param {Object}   options
- * @param {Array}    options.items               
- * @param {string}   [options.value]             
- * @param {string}   [options.initaialValue]             
- * @param {Function} [options.onChange]          
- * @param {Function} [options.renderTrigger]    
- * @param {Function} [options.renderItem]       
- * @param {string}   [options.placement]        
- * @param {string}   [options.className]         
- * @param {string}   [options.triggerClassName]  
- * @param {string}   [options.menuClassName]     
- * @param {string}   [options.itemClassName]    
- *
- * @returns {HTMLElement} 
- *   .getValue()
- *   .setValue(value)
- *   .open() / .close() / .toggle()
- *
- *   const dd = dropdownGenerator({
- *     items: [
- *       { value: 'newest',   label: 'جدیدترین'  },
- *       { value: 'cheapest', label: 'ارزان‌ترین' },
- *       { value: 'popular',  label: 'محبوب‌ترین' },
- *     ],
- *     value: 'newest',
- *     onChange: (value) => console.log(value),
- *   });
- *   container.appendChild(dd);
- */
-
 const dropdownGenerator = ({
   items = [],
   value,
@@ -285,3 +251,5 @@ const dropdownGenerator = ({
 
   return wrapper;
 };
+
+export default dropdownGenerator

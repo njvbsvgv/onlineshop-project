@@ -1,4 +1,4 @@
-const setDataToLocalStorage = (key, value, isString) => {
+export const setDataToLocalStorage = (key, value, isString) => {
   switch (isString) {
     case true:
       localStorage.setItem(key, JSON.stringify(value));
@@ -8,7 +8,7 @@ const setDataToLocalStorage = (key, value, isString) => {
   }
 };
 
-const getDataFromLocalStorage = (key, isParser) => {
+export const getDataFromLocalStorage = (key, isParser) => {
   let data;
   switch (isParser) {
     case true:
@@ -23,10 +23,10 @@ const getDataFromLocalStorage = (key, isParser) => {
   return data;
 };
 
-const deleteDataFromLocalStorage = (key) => {
+export const deleteDataFromLocalStorage = (key) => {
   localStorage.removeItem(key);
 };
 
-const clearLocalStorage = () => {
+export const clearLocalStorage = () => {
   localStorage.clear();
 };
