@@ -85,7 +85,9 @@ const PageHeader = () => {
 
   const bottomItemLeft = document.createElement("div");
   bottomItemLeft.className = "left-item";
-  bottomItemLeft.appendChild(bastekIcon(() => useUpdateRout("/cart", { check: true })));
+  bottomItemLeft.appendChild(bastekIcon(() => {
+    useUpdateRout("/cart", { check: true })
+  }));
 
   const language = getDataFromLocalStorage("language");
   const changeLanguageHandler = (locale) => {

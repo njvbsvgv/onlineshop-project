@@ -12,7 +12,6 @@ export const getPathName = () => {
   return newPathName;
 };
 
-
 export const useUpdateRout = (
   routName,
   state = { check: false, data: null },
@@ -22,12 +21,9 @@ export const useUpdateRout = (
   }
   if (state.check) {
     const token = localStorage.getItem("onlineshopAccessToken");
-    if (!token) {
-      const pathName = localStorage.getItem("routName");
-      localStorage.setItem("routName", pathName);
-    } else {
-      const pathName = getPathName()
-      window.location.hash = `#${pathName}`;
+    if (token) {
+      window.location.hash = `#${routName}`;
+      RebuildWebPages();
     }
   } else {
     window.location.hash = `#${routName}`;
