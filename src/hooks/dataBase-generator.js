@@ -1,3 +1,5 @@
+import { updateLanguage } from "../script/package/language-translation-module/languageTranslation";
+
 export const useDataBaseGeneratorToLocalStorage = () => {
   const data = JSON.parse(localStorage.getItem("dataBase"));
   const language = localStorage.getItem("language")
